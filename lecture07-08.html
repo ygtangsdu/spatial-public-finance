@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 7–8 讲 · 城市内 QSE 与地区间财政竞争</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:900px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:28px;font-weight:700;line-height:1.35;}
+h2.p5{margin-top:40px;font-size:24px;border-top:3px double var(--ink);padding-top:26px;}
+h2{font-size:21px;margin:40px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.formula{text-align:center;font-family:Georgia,"Times New Roman",serif;font-style:italic;margin:14px 0;font-size:16px;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 7–8 讲（城市内收官 + 地区间开篇）</div>
+<h1>包含财税机制的城市内量化空间均衡 &amp; 财政竞争与区域协调</h1>
+</header>
+
+<!-- ==================== 第 7 讲 ==================== -->
+<h2 class="p5">第 7 讲 城市内空间财政学 3：包含财税机制的城市内量化空间均衡分析</h2>
+<p><strong>主线</strong>：第 5 讲读了价格信号，第 6 讲读了形态后果——本讲把两者装进同一台机器（城市内 QSE），让"从未实施过的政策"第一次可以被计算。这是全书方法论的第一次全流程实战。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>写出含财税机制的城市内 QSE 完整模型（家庭、企业、住房、政府四部门）；</li>
+<li>掌握参数获取管道：通勤弹性、房价梯度、集聚弹性、资本化系数的估计与对接；</li>
+<li>理解 Ahlfeldt et al. (2015) 的结构贡献与"财政版柏林墙"的识别源；</li>
+<li>计算三个政策反事实的机制链（房产税、地铁扩张、学区改革）；</li>
+<li>辨析福利分解：总量增益、再分配、无谓损失与归宿；</li>
+<li>评价模型边界：开放边界、多重均衡、预期动态、政府内生。</li>
+</ol></div>
+
+<h3>7.1 模型层：四部门联立</h3>
+<div class="formula">（7.1）　ln V<sub>nx</sub> = ln w<sub>x</sub> − β·ln P<sub>n</sub> − κ·d<sub>nx</sub> + ln G(g<sub>n</sub>) + ln A<sub>n</sub> + ε<sub>nx</sub></div>
+<div class="formula">（7.2）　ln w<sub>x</sub> = ln TFP<sub>x</sub> + α·ln(就业密度<sub>x</sub>)　　（7.3）　ln H<sub>n</sub> = ln H̄<sub>n</sub> + η·(ln P<sub>n</sub> − 税费/规制调整)</div>
+<div class="formula">（7.4）　Σ<sub>n</sub>[t<sup>property</sup>·P<sub>n</sub>H<sub>n</sub> + t<sup>land</sup>·新出让 + 转移支付] = Σ<sub>n</sub> g<sub>n</sub>·N<sub>n</sub> + 基建支出</div>
+<p>均衡要求劳动力市场、住房市场、政府预算同时出清且分选一致性成立。第 5/6 讲产出的六个弹性在此"归位入模"：资本化系数（G、κ 校准）、供给弹性 η（7.3）、分选弹性（ε）、通勤弹性（κ）、门限/蔓延证据（指标约束形式）、集聚弹性 α（7.2）。</p>
+
+<div class="box"><div class="t">方法角 BOX 7.1｜参数审计清单（期末论文模板）</div>
+报告四个弹性（κ 通勤、η 供给、ε 分选、α 集聚）各自来源（内部估计 / 外部引用 / 校准）；标注反事实敏感方向（η 低估 → 房产税归宿偏向房主的结论被放大；α 高估 → 密度收益被夸大）；至少一个参数做 ±25% 敏感性。这张清单就是结构论文实证部分的评价标准。</div>
+
+<h3>7.2 估计层：参数管道与柏林墙范本</h3>
+<p><strong>通勤 κ</strong>：手机信令/普查通勤矩阵 → 引力方程（双向 FE，θ 由成本变异识别）。<strong>房价梯度</strong>：特征价格法读出区位租金；与通勤数据互为校验（过度识别检验是可信度加分项）。<strong>集聚 α</strong>：工资方程 + 历史/地形 IV，量级小正（常用 0.02–0.08）。<strong>政府模块</strong>：财政决算直接校准；资本化闭环做一致性校验。<strong>Berlin 范本</strong>：外生、剧烈、可逆的"分割—重联"实验 → 三期数据联合识别 κ、α 与 amenity——证明了城市内结构参数可被可信识别；中国的开发区设立/扩区、房产税试点、多校划片是"财政版柏林墙"（论文识别富矿）。</p>
+
+<h3>7.3 应用层：三个可计算的政策实验</h3>
+<table>
+<tr><th>实验</th><th>机制链</th><th>关键输出</th></tr>
+<tr><td>房产税开征</td><td>持有成本 → 需求下移 → 价格（∝1/(1+η·弹性)）→ 人口再配 → 集聚反馈 → 收入→服务→部分回流（收益观对冲的均衡版）</td><td>四群体归宿表（存量房主高价值区为主要承担者）</td></tr>
+<tr><td>地铁扩张</td><td>κ 下降 → 沿线需求升 → 房价+人口 → 副中心密度升 → 集聚生产率反馈（DID 看不到）→ 全城梯度重塑</td><td>福利分解 + 增值捕获自偿率（TIF/联合开发量化版）</td></tr>
+<tr><td>学区改革</td><td>确定性折扣 → 溢价收缩 → 分选重排（学区锚定释放）→ 密度/房价梯度重塑 → 若 g 依赖同伴效应则教育产出联立</td><td>财富再分配 + 分选结构 + 教育产出的复合排序</td></tr>
+</table>
+<p>与沪渝试点对照：试点效应弱 = 税率低 + 预期不稳 + 服务对冲；反事实（全国统一 0.5%）可计算——简约式做不到、结构式存在的理由。</p>
+
+<div class="box"><div class="t">中国实践 BOX 7.2｜城市更新"资金自平衡"的全市核算（接第 6 讲）</div>
+给全市增容总量设影子价格 λ：全市最优条件是每个更新单元"边际增容价值 = λ"；单单元核算忽略的是"此单元增容对全市房价与既有税基的负外部性"。政策设计：把 λ 显性化为增容指标交易价格——"指标价格化"改革的微观基础。期末论文迷你版：两单元 + 简化 QSE，演示单平衡与全市最优的数量差异。</div>
+
+<h3>7.4 边界层：城市内 QSE 做不到什么</h3>
+<p>①<strong>开放城市边界</strong>：政策改变城市间迁移时须与城市间模型嵌套（完整栈，第 10 讲）；②<strong>多重均衡</strong>：反事实是"从观测均衡出发的局部移动"，全局规划需报告多重性检查；③<strong>预期动态</strong>：政策公布期的资本化无法被静态模型捕捉；④<strong>政府内生</strong>：本讲政府仍是政策参数——政府优化与策略互动 = 第 8–10 讲。Ahlfeldt 在四条边界内的做法为所有后续城市内财政 QSE 划定了"可信的舒适区"。</p>
+
+<!-- ==================== 第 8 讲 ==================== -->
+<h2 class="p5">第 8 讲 地区间空间财政学 1：财政竞争与区域协调</h2>
+<p><strong>主线</strong>：竞争不是黑或白——同样的辖区竞争，可以是 Tiebout 的效率引擎，也可以是 ZM 的逐底陷阱；分水岭在税基流动性 × 政策工具 × 空间结构的组合。从"税率竞争"的字面理解升级为多维均衡思维。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>推导 ZM 均衡税率与协调最优的差距及调节参数；</li>
+<li>比较三种竞争通道（税基流动、标尺信息、集聚租金）的机制与可检验含义；</li>
+<li>运用空间计量识别策略性互动（SAR 反应函数的三纪律）；</li>
+<li>分析中国"实际税负竞争"的制度形态与度量方案；</li>
+<li>评价转移支付双重身份的识别证据；</li>
+<li>设计区域税收分配规则改革并预测其竞争后果。</li>
+</ol></div>
+
+<h3>8.1 理论层：竞争模型谱系</h3>
+<table>
+<tr><th>模型</th><th>通道</th><th>均衡含义</th><th>中国对应</th></tr>
+<tr><td>ZM 基准</td><td>税基流动（资本）</td><td>纳什税率低于协调最优；双重损失（公共品不足 + 资本错配）</td><td>同质中小城市间的招商竞赛</td></tr>
+<tr><td>标尺竞争</td><td>选民信息（邻区绩效为标尺）</td><td>无税基流动也有空间相关；选举周期强化</td><td>晋升锦标赛 = 权威版标尺竞争</td></tr>
+<tr><td>集聚修正</td><td>集聚租金粘性</td><td>核心可征税不失位；竞争压力集中于"边缘对边缘"</td><td>一线不需要逐底，逐底在中小城市间</td></tr>
+<tr><td>协调理论</td><td>征税权再分配</td><td>重新分配征税权比统一税率更治本</td><td>消费地原则/公式分配；Pillar One/Two 底座</td></tr>
+</table>
+<p><strong>ZM 推导要点</strong>：辖区 i 提税 → 资本流出 → 本地工资降但<strong>他区正外部性</strong>被忽略 → t* &lt; t**。调节参数：公共品偏好、资本供给弹性、辖区数 N（N→∞ 趋完全逐底）。<strong>集聚修正含义</strong>：区域政策若削弱边缘区集聚潜力，反而加深其竞争劣势——转移支付"保护集聚 vs 补贴流失"两难（第 10、11 讲）。</p>
+
+<div class="box"><div class="t">概念辨析 BOX 8.1｜"逐底竞争"判断的三步核查</div>
+①工具核查：法定税率（中国基本无）还是实际让利（返还/补贴/土地）？②税基核查：被争夺税基的流动性（资本 &gt; 企业注册 &gt; 劳动 &gt; 不动产）；③结构核查：对称（ZM）还是核心—边缘（集聚修正）？中文政策讨论常在第 ① 步就停（"税率统一所以没有竞争"）——典型误判。</div>
+
+<h3>8.2 实证层：策略互动的空间计量</h3>
+<div class="formula">（8.1）　y<sub>i</sub> = ρ·Σ<sub>j</sub> w<sub>ij</sub>·y<sub>j</sub> + X'<sub>i</sub>θ + ε<sub>i</sub>（SAR）</div>
+<p>ρ &gt; 0 策略互补（模仿）；识别难题 = 同时性 + 权重任意性 → 三纪律：外生冲击 IV、多重权重稳健、准实验佐证。Brueckner 财产税研究示范"理论参数 → 计量对象"对应与权重批评的处理。<strong>中国证据方向</strong>：实际税负互动存在（方向之争未收敛）；招商互动显著（开发区潮的计量表达）；支出互动偏向生产性（锦标赛的空间版）；转移支付弱化互动（预算软约束）。</p>
+
+<h3>8.3 中国形态层：实际税负竞争、税源背离与统一大市场</h3>
+<p><strong>法定统一、实际分化</strong>：竞争转入税收返还 + 财政奖补 + 低价土地 + 代建厂房 + 柔性征管——税率维度被制度冻结，压力全部转移到土地与执行维度（第 6 讲双轨出让的竞争根源；"清理优惠总是改道冒头"= 挤压效应的地区间版）。</p>
+<p><strong>税收税源背离两类错位</strong>：①产业错位（增值税生产地征收——制造省拿走服务消费省的税）；②总部/注册错位（汇总纳税向总部集中，数字平台放大，第 13 讲）。后果：财力与真实税基脱钩 → 招商扭曲 + 分化加剧 + 均等化压力转向转移支付。<strong>矫正评估</strong>：消费地原则矫正产业错位（需跨省清算）；公式分配矫正总部错位（面临权重谈判）——都是 Keen–Konrad 意义上的"征税权再分配"，比统一优惠更治本。<strong>统一大市场</strong>（岳树民等框架）：分配规则改革改变"竞争回报结构"，竞争行为向新结构再平衡——政策设计必须预判（第 10 讲结构评估对象）。</p>
+
+<h3>8.4 协调层：转移支付与横向机制</h3>
+<p><strong>双重身份</strong>：均等化底座（Oates 修正项）vs 激励扭曲（边际税效应 + 配套支出扭曲）。实证（范子英等 + 国际）：均等化改善落后区公共服务（+）；扭曲税 effort 与产业结构（−）；识别靠分配公式的外生变异（公式断点 RD）。</p>
+<table>
+<tr><th>工具</th><th>矫正对象</th><th>优势</th><th>短板</th></tr>
+<tr><td>均等化转移支付</td><td>纵向缺口 + 横向差异</td><td>规模大、公式化提升中</td><td>边际激励扭曲</td></tr>
+<tr><td>专项 + 配套</td><td>特定公共品缺口</td><td>目标定向</td><td>支出结构扭曲</td></tr>
+<tr><td>税收分配规则改革</td><td>税源背离</td><td>治本（改变竞争回报）</td><td>跨省清算 + 谈判</td></tr>
+<tr><td>税费优惠规范化</td><td>实际税负竞争</td><td>直接</td><td>挤压改道风险</td></tr>
+<tr><td>对口支援/生态补偿</td><td>外溢内部化</td><td>灵活、政治可行</td><td>非公式化、不可预期</td></tr>
+<tr><td>最低税负/标准统一</td><td>逐底竞争</td><td>理论彻底</td><td>参与约束（发达地区抵制）</td></tr>
+</table>
+
+<div class="box"><div class="t">中国实践 BOX 8.2｜"抢企大战"的均衡核算框架</div>
+①让利成本 = 返还现值 + 土地让渡 + 配套投入；②直接收益 = 地方留成 + 就业；③被忽略的均衡收益 = 对邻区挤出（拾取）+ 全域税基零和；④结论条件：让利成本 &gt; 直接收益 − 均衡收益本地份额 → 竞争净损失。文献判断多落在"发达竞争者微利、跟进者净损"——可退出的囚徒困境。治理：改变回报结构（分配规则）优于禁止竞争（清理优惠），因为后者触发挤压改道。</div>
+
+<h3>8.5 结构层预告</h3>
+<p>反应函数与 DID 识别的是互动的存在与局部强度；"取消返还会怎样""改消费地原则会怎样"是均衡问题（竞争策略 × 税基流动 × 集聚结构的联合再平衡）。三个结构化理由：反事实从未实施、拾取与均衡挤出是总量账、集聚租金非对称竞争需要 NEG 参数 + QSE 求解器。第 10 讲把中国要素装入 Fajgelbaum 式区域间 QSE，完成地区间结构闭环。</p>
+
+<h2>两讲小结</h2>
+<ol style="margin-left:22px;">
+<li>城市内 QSE 四部门联立，第 5/6 讲弹性全部"归位入模"；柏林墙范式确立"外生冲击 → 结构参数 → 反事实"链条；三个政策实验兑现"从未实施的政策可以被计算"的方法论承诺；四条边界划定舒适区；</li>
+<li>竞争谱系四模型（ZM/标尺/集聚修正/协调）+ 空间计量三纪律 + 中国实际税负竞争形态 + 转移支付双重身份 + 分配规则改革 = 地区间模块的财政竞争全图；"逐底判断三步核查"是政策讨论的过滤器；</li>
+<li>两讲合拢：城市内收官（价格→形态→均衡的计算闭环），地区间开篇（竞争→协调→待结构化）。</li>
+</ol>
+
+<h2>思考与练习（两讲各三题）</h2>
+<ol class="ex">
+<li>写出 (7.1)–(7.4) 的 hat 方程组，标出三个政策实验冲击进入的方程；</li>
+<li>若 η = 0，房产税归宿四群体表如何变化？哪个群体方向翻转？</li>
+<li>用 Box 7.2 两单元迷你模型演示"单单元自平衡 vs 全市最优"的增容差异（手算或 Python）；</li>
+<li>推导 ZM 均衡税率对辖区数 N 的比较静态，解释"41 市竞争 vs 31 省协调"；</li>
+<li>构造"招商让利指数"（返还 + 土地差价 + 补贴加总）：数据来源、缺失项与验证方案；</li>
+<li>【政策设计题】增值税地方分享改"消费地 + 人口"公式分配：预测地方政府行为变化（竞争工具、支出结构、土地依赖），并给出试点评估的 DID 设计。</li>
+</ol>
+
+<h2>参考文献（两讲合并）</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Ahlfeldt, G. M., Redding, S. J., Sturm, D. M., &amp; Wolf, N. (2015). <i>Econometrica</i>, 83(6), 2127–2189.</li>
+<li>Monte, F., Redding, S. J., &amp; Rossi-Hansberg, E. (2018). <i>QJE</i>, 133(2), 765–816.</li>
+<li>Rosen, S. (1974). <i>JPE</i>, 82(1), 34–55.</li>
+<li>Anas, A., Arnott, R., &amp; Small, K. (1998). <i>JEL</i>, 36(3), 1426–1464.</li>
+<li>Zodrow &amp; Mieszkowski (1986). <i>JPE</i>.</li>
+<li>Besley, T., &amp; Case, A. (1995). <i>AER</i>, 85(1), 25–45.</li>
+<li>Brueckner, J. K. (2003). Strategic interaction among governments.（综述）</li>
+<li>Keen, M., &amp; Konrad, K. A. (2013). <i>Handbook of Public Economics</i>, Vol. 5.</li>
+<li>Baldwin, R., &amp; Krugman, P. (2004). <i>EER</i>, 48(1), 1–23.</li>
+<li>Oates, W. E. (1999). <i>JEL</i>, 37(3), 1120–1149.</li>
+<li>Agrawal, D. R., &amp; Wilson, J. D. (2024). Fiscal federalism in the 21st century.</li>
+<li>Wilson, J. D. (1999). <i>NTJ</i>, 52(2), 269–304.</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>岳树民等. 建设全国统一大市场——基于区域税收分配的研究.</li>
+<li>范子英. 转移支付系列. 《经济研究》《管理世界》.</li>
+<li>龚锋, 卢洪友. 空间财政互动计量系列.</li>
+<li>周黎安. (2007). 晋升锦标赛. 《经济研究》.</li>
+<li>刘修岩. 集聚经济参数实证. 《中国工业经济》.</li>
+<li>郑思齐. 土地供给与城市空间结构系列.</li>
+<li>《数字经济背景下税收税源背离》. 中央财经大学学报.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 7–8 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>

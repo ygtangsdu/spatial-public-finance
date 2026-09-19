@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 1 讲 · 导论：财政的空间维度</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:880px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:30px;font-weight:700;line-height:1.35;}
+.sub{margin-top:10px;color:var(--muted);font-size:14.5px;}
+h2{font-size:21px;margin:44px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+.def{background:#fff;border:1px solid var(--accent);padding:14px 18px;margin:16px 0;font-size:15px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.formula{text-align:center;font-family:Georgia,"Times New Roman",serif;font-style:italic;margin:14px 0;font-size:16px;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 1 讲（共 14 讲）</div>
+<h1>导论：财政的空间维度</h1>
+<div class="sub">新经济地理学 × 量化空间经济学 × 财政联邦主义｜方法论主线：简约式估计 → 量化空间结构估计</div>
+</header>
+
+<h2>本章导读</h2>
+<p>公共经济学与空间经济学长期平行发展：前者研究政府应当如何征税、供给公共服务与再分配，默认经济活动在"一个国家、一个辖区"的抽象空间中展开；后者研究经济活动为什么在地理上集聚、城市为什么存在、区域差距为什么演化，却长期把政府简化为外生参数。本课程的基本立场是：这一分离是历史意外而非理论必然。财政决策天然是空间的——公共服务在辖区内供给、税源在地理上分布、居民与企业可以用迁移对辖区间财政差异"投票"；反过来，空间力量（集聚、通勤、贸易、迁移）决定了任何财税政策的真实归宿与效率后果。本讲建立"财政的空间维度"的问题意识，梳理三大理论传统的源流与合流，给出空间财政学的工作性定义，并交代中国制度语境与全课程方法论主线。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>理解财政的三个空间事实：公共服务的辖区供给与空间衰减、税源的空间分布与流动性、居民与企业的辖区间流动；</li>
+<li>掌握 Tiebout（1956）、Oates（1972）与 Krugman（1991）三个奠基模型的核心机制；</li>
+<li>比较财政联邦主义与新经济地理学在处理"流动性"上的不同方式及其互补性；</li>
+<li>运用资本化、财政外部性、空间均衡三个核心概念分析现实政策；</li>
+<li>评价中国分税制与土地财政体制的空间后果，识别适合简约式与结构式方法的研究问题；</li>
+<li>了解全课程结构与"识别 → 量化 → 合成"的方法论主线。</li>
+</ol></div>
+
+<h2>1.1 为什么财政本质上是空间的：三个空间事实</h2>
+
+<h3>1.1.1 事实一：公共服务的辖区供给与空间衰减</h3>
+<p>绝大多数公共服务——教育、治安、道路、公园——由地方政府在特定辖区内供给，其受益在空间上衰减。这带来三个后果：<strong>其一，辖区匹配问题。</strong>Olson（1969）的"财政对等原则"要求公共品受益范围与征税、决策辖区重合；外溢导致供给不足，辖区过大则损失偏好匹配。Oates（1972）的分权定理围绕这一权衡：在偏好异质与供给成本既定时，低层级政府供给能更好地适应本地偏好——除非存在足以推翻分权收益的规模经济或外溢。<strong>其二，受益衰减使公共服务进入区位选择，进而进入土地价值。</strong>"好学区 + 低税率"的区位吸引流入，直至居住成本上升抵消财政收益——这是资本化机制的直觉，也是 Tiebout 均衡的关键证据（Oates 1969）。<strong>其三，人口分布与公共服务配置必须同时决定。</strong>人口收缩地区的核心财政困境正是：学校、管网、道路具有网络性与固定成本，人口流出使人均成本急剧上升（第 12 讲）。</p>
+
+<h3>1.1.2 事实二：税源的空间分布与流动性</h3>
+<p>税收依据地理联结点在辖区间划分：增值税按生产地原则、所得税按居民/雇员所在地、财产税按不动产所在地。税基流动性差异巨大：不动产不可移动，劳动力受住房与户籍制约，资本与企业注册地流动性极高。这一层级结构决定了多层级政府的税种分工——高度流动的税基归中央，不可移动的税基（不动产）适合地方（Oates 1972）——也决定了地区间税收竞争的强度（第 8 讲）。</p>
+<p>税源分布与归属的错位是空间财政的核心张力。中国的两个突出表现：1994 年分税制后增值税按生产地征收，使工业用地出让与招商引资成为地方"税源争夺战"（第 6 讲）；数字经济使"企业—场所—税源"联结断裂，税收向注册地与总部集聚，形成系统性税收税源背离（第 13 讲）。国际维度上，OECD/G20"双支柱"本质上是数字时代对税收地理规则的重写。</p>
+
+<h3>1.1.3 事实三：居民与企业的辖区间流动——"用脚投票"</h3>
+<p>Tiebout（1956）的直觉：若居民可自由流动，"用脚投票"可解决公共品偏好显示失灵——辖区内偏好趋同、辖区间"税收—服务组合"分化，如同地方公共品的竞争市场。这一机制是全书枢纽：资本化是它的均衡价格（Tiebout–Oates 假说）；辖区竞争是它的供给面（Zodrow–Mieszkowski 逐底竞争担忧）；sorting 是它的人口后果；多辖区一般均衡是它的结构化表达（第 7、10 讲）。</p>
+<p>但用脚投票立即产生边界问题：<strong>迁移把财政效应外部化到迁出地与迁入地</strong>——高技能移民带来税基与集聚外部性，迁出地留下人均服务成本上升（财政外部性与 people-based vs place-based 之争的种子，第 8、11 讲）。同时流动能力在人群间不均等：住房财富、户籍、语言与家庭网络都是迁移摩擦，"辖区竞争提高效率"必须与"空间分割与不平等"并存（Rhode & Strumpf 2003）。</p>
+
+<div class="box"><div class="t">概念辨析 BOX 1.1｜财政联邦主义 ≠ 政治联邦制</div>
+Fiscal federalism 是关于"不同层级政府间财政职能与工具配置"的经济理论，适用于任何政体。中国学者常用"财政分权"描述事实上的支出责任下移，即便政治与人事高度集中（Zhang et al. 2006）。区分概念与政体是阅读中英文文献的第一步。</div>
+
+<div class="box"><div class="t">案例研究 BOX 1.2｜三个制度事实读懂中国财政的空间性</div>
+① 分税制重构央地收入划分，地方逐步形成"土地出让金 + 转移支付 + 专项债"的多元筹资结构（第 6 讲详述）；② 增值税长期按生产地在工业园区征收，"开发区招商"成为地方政府竞争主战场（Lu, Wang & Zhu 2019）；③ 义务教育就近入学使学区房溢价成为公共服务资本化最显著的中国形态（第 5 讲）。三者分别对应城市内、地区间、以及两者的均衡互动。</div>
+
+<h2>1.2 从三个学科传统到空间财政学</h2>
+
+<h3>1.2.1 传统一：财政联邦主义（Tiebout–Musgrave–Oates）</h3>
+<p>Musgrave（1959）确立政府三大职能：配置、分配、稳定。Oates（1972）建立"职能—工具—辖区"匹配框架：分配与稳定归中央，配置在偏好异质足够大时下放。Tiebout（1956）为分权效率提供微观机制——用脚投票。该传统的贡献是政府层级与财政工具的规范框架；代价是对空间经济的极简处理：辖区是"点"，辖区内部没有城市结构（房价梯度、通勤），辖区之间没有集聚经济与贸易，迁移的唯一动机是财政组合差异。后续的财产税"新观点"（Mieszkowski 1972；Zodrow–Mieszkowski 1986）、标尺竞争（Besley & Case 1995）、税收竞争理论（Keen & Konrad 2013）部分弥补了简化，但始终缺少内生的经济地理。</p>
+
+<h3>1.2.2 传统二：新经济地理学（Krugman 1991）</h3>
+<p>核心—边缘模型由三种力量构成：<strong>市场规模效应</strong>（企业定位大市场省运输成本）、<strong>价格指数效应</strong>（企业集中地产品种类多、物价指数低、实际工资高）、<strong>拥挤效应</strong>（不可流动要素构成分散力）。当贸易成本处于中间区间时，循环累积因果使对称均衡不稳定，经济内生分化为核心与边缘。政策含义直指财政：任何改变贸易成本、要素流动成本的政策（基建、转移支付、税制）都可能触发集聚的累积过程与门槛效应。NEG 的盲区恰是财政：政府要么缺席，要么是外生补贴。把"策略性地方政府"嵌入 NEG/QSE 正是空间财政学的前沿。</p>
+
+<h3>1.2.3 传统三：量化空间经济学（QSE）</h3>
+<p>NEG 回答"为什么有集聚"，QSE 回答"集聚有多大、政策反事实会怎样"。从 Rosen–Roback（1982）城市效用均等化框架，经 Ahlfeldt 等（2015）城市内结构估计、Desmet–Rossi-Hansberg 动态空间增长模型，发展出"模型引导的实证"工具箱：引力法估计贸易/通勤/迁移弹性，exact hat algebra 做反事实。Fajgelbaum 等（2019+）将州税嵌入空间一般均衡测度空间错配，标志"税收版 QSE"成型——本课程第 4、7、10 讲的方法核心。</p>
+
+<h3>1.2.4 合流：空间财政学的工作性定义</h3>
+<div class="def"><strong>定义（工作性）</strong>：空间财政学研究财政工具（税收、转移支付、公共服务、土地供给）与经济活动空间分布（城市内部结构、城市体系、区域格局）的双向互动——财税制度塑造集聚、迁移与房价的均衡；空间力量决定财税政策的归宿、效率与再分配后果；其现代方法是把财政机制嵌入可估计、可做反事实的量化空间均衡模型，并用简约式证据识别关键参数。</div>
+
+<table>
+<tr><th>维度</th><th>财政联邦主义</th><th>新经济地理学</th><th>量化空间经济学</th></tr>
+<tr><td>核心问题</td><td>政府间职能与工具配置</td><td>集聚为什么发生</td><td>集聚与政策的量化福利</td></tr>
+<tr><td>空间单位</td><td>辖区（点）</td><td>两区域（核心—边缘）</td><td>连续/离散空间 + 城市内部结构</td></tr>
+<tr><td>政府角色</td><td>规范分析对象</td><td>外生/缺席</td><td>可嵌入的政策参数</td></tr>
+<tr><td>流动性</td><td>迁移 = 财政组合选择</td><td>劳动力流动 = 集聚力量</td><td>通勤/迁移弹性可估计</td></tr>
+<tr><td>代表文献</td><td>Tiebout 1956; Oates 1972</td><td>Krugman 1991</td><td>Redding & Rossi-Hansberg 2017</td></tr>
+<tr><td>对本课程贡献</td><td>财政工具与辖区理论</td><td>集聚与循环累积机制</td><td>结构估计与反事实方法</td></tr>
+</table>
+
+<p><strong>合流后能回答的新问题</strong>：房产税从无到有的总福利效应与空间归宿（第 5–7 讲）；开发区优惠的"净创造 vs 拾取"（第 3、10 讲）；转移支付是"救助边缘区"还是"补贴不可持续的空间格局"（第 10–12 讲）；数字税基的空间界定如何改变地区间分配（第 13 讲）。</p>
+
+<div class="box"><div class="t">方法角 BOX 1.3｜"简约式"与"结构式"的分工</div>
+简约式追求可信因果效应：地铁开通使沿线房价上升多少（DID/断点，第 3 讲）。结构式追求可做反事实的模型：若以税率 t 开征房产税，城市人口、房价梯度与福利如何变化（第 4 讲）。两者是流水线而非替代：简约式证据识别关键弹性，结构模型把弹性组装成均衡，回答"从未实施过的政策会怎样"。这一"两步走"逻辑贯穿所有应用讲次。</div>
+
+<h2>1.3 四个核心概念：贯穿全书的分析工具</h2>
+
+<h3>1.3.1 资本化（Capitalization）</h3>
+<div class="formula">（1.1）　P<sub>i</sub> = F(税后收入<sub>i</sub>, 公共服务<sub>i</sub>, amenity<sub>i</sub>, 住房供给<sub>i</sub>, ……)</div>
+<p>空间均衡下辖区间财政差异全部折算进土地价值。Oates（1969）用新泽西 53 个市镇数据首次检验：财产税税率与学校支出分别对房价有负/正显著影响——Tiebout 世界的第一份经验证据。资本化程度取决于住房供给弹性、迁移摩擦与信贷约束。中国版本的特殊性：房产税长期缺位使"税收资本化"通道几乎关闭，而"服务资本化"（学区、地铁）极为强劲，形成"高服务溢价 + 低持有成本"组合——既解释学区房现象（第 5 讲），也预示房产税改革的一般均衡复杂性（第 6、7 讲）。</p>
+
+<h3>1.3.2 财政外部性与辖区竞争</h3>
+<p>税基跨辖区流动时，单辖区的最优决策忽略对其他辖区的影响。Zodrow–Mieszkowski（1986）基准模型：地方对流动资本征税提供公共品，纳什均衡下税率过低、公共品供给不足（逐底竞争）。对立面是"收益观"：Tiebout 世界里财产税是公共服务的价格、中性的使用者付费（Oates–Schwab 费城研究）。两种观点的对峙构成第 6、8 讲理论骨架；Brueckner 的空间计量研究使辖区财政互动可被直接检验。</p>
+
+<h3>1.3.3 空间均衡（Spatial Equilibrium）</h3>
+<div class="formula">（1.2）　V<sub>i</sub> = w<sub>i</sub> / (P<sub>i</sub>)<sup>β</sup> · A<sub>i</sub> = V̄（对所有有人居住的区位 i）</div>
+<p>空间均衡是全书技术灵魂。两个含义：<strong>其一</strong>，房价上涨未必是福利改善——可能只是拥挤加剧的均衡表现（Hsieh–Moretti 争论核心，第 4 讲）；<strong>其二</strong>，任何"局部"政策评估都要警惕均衡反馈（SUTVA 违背、溢出），这是第 3 讲方法论主题。</p>
+
+<h3>1.3.4 基于地点的政策（Place-Based Policy）</h3>
+<p>当均衡因集聚外部性或历史锁定而低效时，针对特定地点的政策可能改进福利；但"给流动者"往往更直接。Kline–Moretti（2014）对 TVA 的评估是"集聚 + 政策评估"标杆：新政大基建在集聚条件下产生持久本地效应，但在集聚已饱和的当代复制净收益存疑。中国的开发区、新区、自贸区是最大实验场（Lu–Wang–Zhu 2019；Chen 等 2019），构成第 3、10、11 讲实证核心。</p>
+
+<div class="box"><div class="t">概念辨析 BOX 1.4｜效率与公平的空间悖论：两个流传甚广的误解</div>
+误解一："区域差距大 = 市场失灵"。在集聚经济下，要素向高生产率地区集中本身是效率改进；真正的问题是住房供给、户籍与财政制度阻碍集中（Hsieh & Moretti 2019），或集聚收益分配机制缺失。误解二："给落后地区输血是浪费"。若迁移摩擦真实存在，或边远地区公共服务存在最低网络成本，对"地方"的支持可以是"对人"支持的必要补充——关键是区分"补贴不可持续的空间格局"与"补偿被空间重构牺牲的人"（第 11、12 讲）。</div>
+
+<h2>1.4 中国语境：分税制、土地财政与空间政治经济学</h2>
+<p><strong>（1）分税制与纵向失衡（1994—）。</strong>分税制重构央地收入划分，地方支出责任与自有收入间存在纵向财政缺口，由转移支付与土地相关收入弥补。Jin–Qian–Weingast（2005）解读为"市场维护型联邦主义"：强地方财政激励与高增长并存；Zhang 等（2006）与周黎安（2007）"晋升锦标赛"强调政治集中 + 经济分权对官员行为的塑造。结论：理解中国地方政府，必须同时看财政激励与政治激励。</p>
+<p><strong>（2）土地财政与城市空间（2000s—）。</strong>地方垄断建设用地一级供给，"低价工业用地招商 + 高价商住用地融资"成为典型组合，其空间后果（横向蔓延、开发区扩张、人口密度门限效应）是"财税制度塑造城市空间结构"最宏大的自然实验（第 6 讲）。土地出让金本质是资本化的未来土地租金/服务流的一次性变现，行使了部分财产税职能，但激励上偏向"扩张"而非"维持"。</p>
+<p><strong>（3）户籍、公共服务与人口流动。</strong>户籍约束"用脚投票"的完全实现：迁移者进入劳动力市场但公共服务可及性打折，形成"劳动力流动 + 家庭分离"的差异化迁移。这为 Tiebout 框架提供"摩擦版"中国检验场；任何户籍/公共服务改革都会触发空间均衡重排（第 11 讲）。</p>
+<p><strong>（4）区域政策与转移支付。</strong>西部大开发、东北振兴、对口支援、脱贫攻坚构成世界规模最大的 place-based policy 序列；均等化与专项转移支付决定地方财力的事后分布（第 8、11 讲）。</p>
+
+<div class="box"><div class="t">中国实践 BOX 1.5｜"土地财政"的一个空间财政学读法</div>
+把（1.1）反过来用：既然公共服务与预期发展被资本化进地价，而地方政府是土地一级市场垄断供给者，"卖地收入"可理解为政府对自己制造的"资本化租金"的一次性变现——它是财产税的替代物（一次性、流量化、与出让时点绑定），内嵌三种空间扭曲：激励上重增量轻存量（鼓励扩张）；时间上让当代购房者预付未来公共服务（代际问题）；地理上公共服务溢价被基础设施投资辖区捕获的错配（地铁沿线增值是否被回收？）。这三点分别是第 6、7、9 讲的课题。</div>
+
+<h2>1.5 本课程的结构与方法论主线</h2>
+<table>
+<tr><th>模块</th><th>讲次</th><th>主题</th><th>方法论节点</th></tr>
+<tr><td>一 导论与理论</td><td>1–2</td><td>财政的空间维度；NEG×联邦主义×QSE 融合</td><td>问题意识与理论地图</td></tr>
+<tr><td>二 方法论</td><td>3–4</td><td>place-based policy 简约式评估；QSE 结构估计</td><td>工具箱建立</td></tr>
+<tr><td>三 城市内</td><td>5–7</td><td>公共服务资本化；财税与城市空间结构；城市内 QSE</td><td>简约式 → 结构第一次合流</td></tr>
+<tr><td>四 地区间</td><td>8–10</td><td>财政竞争与区域协调；都市圈财税设计；地区间 QSE</td><td>空间一般均衡的财政扩展</td></tr>
+<tr><td>五 前沿</td><td>11–14</td><td>空间不平等；人口收缩；数字经济税基；总结与选题</td><td>开放问题与研究设计</td></tr>
+</table>
+<p>方法论主线三段式：<strong>识别</strong>（第 3 讲：DID、断点、合成控制、溢出稳健推断）→ <strong>量化</strong>（第 4 讲：结构参数估计、exact hat algebra 反事实）→ <strong>合成</strong>（各应用讲：简约式证据校准结构模型，输出政策反事实与福利归宿）。期末论文要求"两段式"设计，正是对这一主线的训练。</p>
+
+<h2>1.6 如何读本课程：文献阅读的三个层次</h2>
+<p><strong>第一层：读"问题"</strong>——文献的问题意识属于三个空间事实中的哪一个？<strong>第二层：读"识别/估计"</strong>——效应来自什么变异？外生性假设是什么？结构论文中哪些参数被估计、哪些被校准？反事实如何求解？<strong>第三层：读"政策边界"</strong>——结论在什么制度环境成立？迁移到中国语境需改动哪个假设（住房供给弹性？迁移摩擦？政治激励）？课堂报告按这三层组织。</p>
+
+<h2>本章小结</h2>
+<ol style="margin-left:22px;">
+<li>财政的空间性由三个事实奠基：公共服务的辖区供给与空间衰减、税源的空间分布与流动性、居民与企业的辖区间流动；</li>
+<li>空间财政学是三大传统的合流：财政联邦主义提供规范框架，NEG 提供集聚机制，QSE 提供结构估计与反事实方法；</li>
+<li>四个核心概念贯穿全书：资本化、财政外部性/辖区竞争、空间均衡、place-based policy；</li>
+<li>中国的分税制 + 土地财政 + 户籍 + 大规模区域政策构成最丰富的制度实验场；</li>
+<li>方法论主线为"识别 → 量化 → 合成"：简约式与结构式是流水线两段，而非竞争的意识形态。</li>
+</ol>
+
+<h2>关键术语表</h2>
+<table>
+<tr><th>术语</th><th>英文</th><th>一句话定义</th></tr>
+<tr><td>用脚投票</td><td>voting with one's feet</td><td>居民以迁移对辖区间财政组合差异做出选择（Tiebout 1956）</td></tr>
+<tr><td>分权定理</td><td>decentralization theorem</td><td>偏好异质足够大且无显著规模经济/外溢时，低层级政府供给公共品更优（Oates 1972）</td></tr>
+<tr><td>资本化</td><td>capitalization</td><td>财政差异（税率、服务）折算进土地/住房价格的过程</td></tr>
+<tr><td>财政对等</td><td>fiscal equivalence</td><td>公共品受益范围与征税、决策辖区边界的重合（Olson 1969）</td></tr>
+<tr><td>核心—边缘模型</td><td>core–periphery model</td><td>递增收益+运输成本+要素流动下内生空间分化的 NEG 基准模型（Krugman 1991）</td></tr>
+<tr><td>空间均衡</td><td>spatial equilibrium</td><td>区位选择调整至各区位间接效用相等的均衡（Rosen–Roback 传统）</td></tr>
+<tr><td>基于地点的政策</td><td>place-based policy</td><td>针对特定地理区域的税收、补贴、基建或制度性优惠政策</td></tr>
+<tr><td>逐底竞争</td><td>race to the bottom</td><td>辖区为争夺流动税基竞相降税导致的低税率—低服务均衡</td></tr>
+<tr><td>纵向财政缺口</td><td>vertical fiscal gap</td><td>地方支出责任与自有财政收入之差，由转移支付弥补</td></tr>
+<tr><td>税收税源背离</td><td>tax-source separation</td><td>税收入库地与价值创造地的系统性错位</td></tr>
+</table>
+
+<h2>思考与练习</h2>
+<ol class="ex">
+<li>用三个空间事实分析你熟悉的一座城市当前最大的财政议题，指出它属于城市内、地区间还是总体空间均衡问题；</li>
+<li>比较 Tiebout 模型与 Krugman 核心—边缘模型中"迁移"的作用：迁移动机、均衡含义与福利性质有何不同？各自的批判者提出了什么证据？</li>
+<li>有观点认为"中国没有房产税，因此不存在资本化"。写 500 字反驳：区分"税收资本化"与"服务资本化"，并用 Oates（1969）逻辑说明房产税缺位如何改变了资本化的结构而非消除资本化；</li>
+<li>举一个 place-based 政策（开发区/新区/特区），分别写出适合简约式评估与需要结构评估的研究问题各一个；</li>
+<li>【数据练习】查找所在城市近年地铁新线与沿线小区挂牌价数据，设计初步 DID 方案（处理组/对照组定义、平行趋势检验、空间溢出），说明每一步的威胁与应对。</li>
+</ol>
+
+<h2>参考文献</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Tiebout, C. M. (1956). A pure theory of local expenditures. <i>Journal of Political Economy</i>, 64(5), 416–424.</li>
+<li>Oates, W. E. (1969). The effects of property taxes and local public spending on property values. <i>JPE</i>, 77(6), 957–971.</li>
+<li>Oates, W. E. (1972). <i>Fiscal Federalism</i>. Harcourt Brace Jovanovich.</li>
+<li>Olson, M. (1969). The principle of "fiscal equivalence". <i>AER</i>, 59(2), 479–487.</li>
+<li>Krugman, P. (1991). Increasing returns and economic geography. <i>JPE</i>, 99(3), 483–499.</li>
+<li>Musgrave, R. A. (1959). <i>The Theory of Public Finance</i>. McGraw-Hill.</li>
+<li>Zodrow, G. R., & Mieszkowski, P. (1986). Pigou, Tiebout, property taxation… <i>JPE</i>.</li>
+<li>Jin, H., Qian, Y., & Weingast, B. R. (2005). Regional decentralization and fiscal incentives: Federalism, Chinese style. <i>JDE</i>, 76(1), 79–103.</li>
+<li>Redding, S. J., & Rossi-Hansberg, E. (2017). Quantitative spatial economics. <i>Annual Review of Economics</i>, 9, 21–58.</li>
+<li>Neumark, D., & Simpson, H. (2015). Place-based policies. <i>Handbook of Regional and Urban Economics</i>, 5B, 1197–1287.</li>
+<li>Kline, P., & Moretti, E. (2014). Local economic development, agglomeration economies, and the big push. <i>QJE</i>, 129(1), 275–331.</li>
+<li>Hsieh, C.-T., & Moretti, E. (2019). Housing constraints and spatial misallocation. <i>AEJ: Macroeconomics</i>, 11(2), 1–39.</li>
+<li>Rhode, P. W., & Strumpf, K. S. (2003). Assessing the importance of Tiebout sorting. <i>JPE</i>, 111(5), 848–874.</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>周黎安. (2007). 中国地方官员的晋升锦标赛模式研究. 《经济研究》.</li>
+<li>范子英, 田彬彬. 地方政府竞争、转移支付系列研究. 《经济研究》《管理世界》.</li>
+<li>陆铭. (2016). 《大国大城》. 上海人民出版社.</li>
+</ul>
+<h4>延伸阅读</h4>
+<ul>
+<li>Krugman, P. (2009). The increasing returns revolution in trade and geography. <i>AER</i>, 99(3), 561–571.</li>
+<li>Oates, W. E. (1999). An essay on fiscal federalism. <i>JEL</i>, 37(3), 1120–1149.</li>
+<li>Lu, Y., Wang, J., & Zhu, L. (2019). Place-based policies, creation, and agglomeration economies. <i>AEJ: Policy</i>.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 1 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>

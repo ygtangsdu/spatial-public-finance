@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 4 讲 · 方法论基础 2：Quantitative Spatial Equilibrium Models</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:880px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:29px;font-weight:700;line-height:1.35;}
+.sub{margin-top:10px;color:var(--muted);font-size:14.5px;}
+h2{font-size:21px;margin:44px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.formula{text-align:center;font-family:Georgia,"Times New Roman",serif;font-style:italic;margin:14px 0;font-size:16px;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 4 讲（共 14 讲）</div>
+<h1>方法论基础 2：Quantitative Spatial Equilibrium Models（量化空间结构估计）</h1>
+<div class="sub">模型族谱 · 部件箱 · 引力估计与矩匹配 · Exact Hat Algebra · Fajgelbaum 与 Hsieh–Moretti 精读</div>
+</header>
+
+<h2>本章导读</h2>
+<p>第 3 讲结尾划定了简约式的三条边界：不能回答反事实政策、不能内生化均衡反馈、不能处理多重均衡。本讲讲授跨越这三条边界的工具——量化空间均衡（QSE）模型。以 Redding &amp; Rossi-Hansberg (2017) 综述为地图，完成四件事：<strong>其一</strong>，梳理 QSE 模型族谱——Rosen–Roback 城市间、Alonso–Muth–Mills 城市内、Armington/量化 NEG 区域间、Desmet–Rossi-Hansberg 动态空间；<strong>其二</strong>，解剖标准部件箱——离散选择区位、住房土地、通勤迁移摩擦、集聚拥挤、政府财政工具、均衡求解；<strong>其三</strong>，讲授估计与校准——引力法、矩匹配、exact hat algebra；<strong>其四</strong>，精读 Fajgelbaum et al. 州税空间错配与 Hsieh–Moretti 住房约束两篇标杆。本讲结尾与第 2 讲融合框架（式 2.5）对接，完成"理论 → 方法"的合拢。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>掌握 Rosen–Roback 与 AMM 两个基准均衡的联立结构；</li>
+<li>描述 QSE 族谱四层级及其适用问题；</li>
+<li>理解离散选择区位理论的微观基础——弹性为何是全部结构参数的核心；</li>
+<li>运用引力方程估计空间弹性并说明识别假设；</li>
+<li>推导 exact hat algebra 的基本思想；</li>
+<li>评价 Fajgelbaum et al. 与 Hsieh–Moretti 的建模选择与结论稳健性，理解后者争议。</li>
+</ol></div>
+
+<h2>4.1 模型族谱：四个层级的空间均衡</h2>
+
+<h3>4.1.1 层级一：城市间均衡（Rosen–Roback）</h3>
+<p>城市 j 的均衡由三个方程联立：工资方程（w<sub>j</sub>）、房价方程（P<sub>j</sub> = P<sub>j</sub>(N<sub>j</sub>)，供给弹性因地理/规制而异）、空间均衡条件：</p>
+<div class="formula">（4.1）　ln V<sub>j</sub> = ln w<sub>j</sub> − β·ln P<sub>j</sub> + ln A<sub>j</sub> = ln V̄ + ln ε<sub>j</sub>（ε<sub>j</sub> 为个体偏好冲击）</div>
+<p>假设 ε 服从第一类极值分布，人口份额呈 logit 形式——<strong>离散选择理论把"人们对空间差异的反应"压缩为一个弹性参数</strong>，这是 QSE 一切弹性的微观基础。经典应用：实际工资差异 = amenity 补偿；房价差异 = 供给约束 × 需求（Roback 1982）。</p>
+
+<h3>4.1.2 层级二：城市内均衡（Alonso–Muth–Mills）</h3>
+<p>城市内由通勤成本梯度组织：房价随距 CBD 距离下降，密度与建筑高度随之调整（横向蔓延 vs 纵向增长的分野在此，第 6 讲）。均衡条件：</p>
+<div class="formula">（4.2）　ln V<sub>nx</sub> = ln w<sub>x</sub> − β·ln P<sub>n</sub> − κ·d<sub>nx</sub> + ln A<sub>n</sub> = 常数 + 偏好冲击</div>
+<p>城市内 QSE（Ahlfeldt et al. 2015 柏林墙为范本）把它与通勤流矩阵、房价梯度、工资联立，可量化"改变某区位地价税/容积率/地铁线"的全城均衡后果——第 7 讲载体。</p>
+
+<h3>4.1.3 层级三：区域间均衡（Armington / 量化 NEG）</h3>
+<p>城市压缩为点，区域间由贸易成本连接。Armington + 技术差异 → 引力结构贸易流；迁移摩擦 + 资本流动 → 区域均衡。量化 NEG 以 Krugman 三方程（第 2 讲式 2.2–2.4）为骨架、参数由数据估计。财政扩展最丰富：Fajgelbaum et al. 嵌入州税；中国版嵌入开发区与转移支付（第 10 讲）。</p>
+
+<h3>4.1.4 层级四：动态空间增长（Desmet–Rossi-Hansberg）</h3>
+<p>引入动态：地区生产率带本地溢出随机演化，均衡决定人口与产业的空间—时间路径。反事实从"新均衡"变为"新增长路径"——可回答"转移支付改变长期增长轨迹还是只改水平"。计算代价高，但为第 12 讲（人口收缩与财政可持续）提供唯一能处理路径依赖的框架。</p>
+
+<div class="box"><div class="t">方法角 BOX 4.1｜族谱选择原则：匹配问题与数据</div>
+选层级三问：①政策作用单元是区位内（容积率、学区）还是区位间（转移支付、贸易）？→ AMM 还是区域间模型；②关心水平效应还是路径效应？→ 静态还是动态；③数据是城市面板、通勤矩阵还是贸易流？→ 哪个层级弹性可识别。误配层级是结构研究最常见的"开场失误"。</div>
+
+<h2>4.2 QSE 的标准部件箱</h2>
+<table>
+<tr><th>部件</th><th>内容</th><th>财政相关性</th></tr>
+<tr><td>① 区位选择</td><td>Type-I EV 冲突 → logit 份额；核心弹性 1/ε</td><td>税收/服务差异的迁移反应</td></tr>
+<tr><td>② 住房与土地</td><td>开发商供给；弹性由地理与规制决定</td><td>供给弹性调节资本化归宿（第 1 讲环 A）</td></tr>
+<tr><td>③ 通勤与迁移摩擦</td><td>城市内通勤成本；城市间迁移摩擦（含户籍）</td><td>财政差异传导速度与选择性</td></tr>
+<tr><td>④ 集聚与拥挤</td><td>密度 → 生产率（正）；密度 → 通勤/房价/污染（负）</td><td>最优城市规模与错配方向</td></tr>
+<tr><td>⑤ 政府与财政工具</td><td>各税种按经济身份进入；预算约束联立</td><td>反事实守恒的前提</td></tr>
+<tr><td>⑥ 均衡求解</td><td>市场出清 + 选择一致性；多重均衡风险</td><td>局部反事实 + 敏感性分析</td></tr>
+</table>
+<p><strong>部件⑤的中国改造要点</strong>：土地供给由指标体系管理——把"建设用地指标"作为供给约束写入模型；公共服务进入效用（学区）与生产率（基建）；户籍作为迁移摩擦的选择性维度。</p>
+
+<h2>4.3 估计与校准：结构参数从哪里来</h2>
+
+<h3>4.3.1 引力法：空间弹性的工作马</h3>
+<div class="formula">（4.3）　ln X<sub>ij</sub> = ln(供给能力<sub>i</sub>) + ln(需求能力<sub>j</sub>) − θ·ln(成本<sub>ij</sub>) + 控制变量</div>
+<p>固定效应结构吸收能力项，θ 由双边成本变异识别。中国注意点：省际贸易流需投入产出分解或商品流通数据近似；通勤流用手机信令/普查通勤表——数据质量直接决定结构可信度。</p>
+
+<h3>4.3.2 矩匹配与最大似然</h3>
+<p>对无法直接回归的参数（集聚弹性、amenity），选择模型内生统计量（工资方差、房价梯度、Zipf 斜率）与数据吻合。规范要点：报告参数识别来源与置信区间（delta 法或数值 bootstrap）。</p>
+
+<h3>4.3.3 Exact Hat Algebra：不求解水平的反事实</h3>
+<p>Dekle–Eaton–Kortum (2008) 洞见：反事实只需相对变化。对均衡条件做对数差分：</p>
+<div class="formula">（4.4）　Δln w<sub>j</sub> − β·Δln P<sub>j</sub> + Δln A<sub>j</sub> = Δln V̄（对所有 j）</div>
+<p>与市场出清的差分形式构成仅含 hat 值的方程组——水平参数不需校准。三大好处：免于水平校准争议、数据要求低、计算轻。<strong>当代 QSE 论文默认工作流。</strong></p>
+
+<div class="box"><div class="t">方法角 BOX 4.2｜"模型引导的实证"：参数审计</div>
+结构论文的实证部分常看似简约式（引力回归、弹性估计），区别在目的——结构式把估计当作模型输入（服务于反事实）。读结构论文要追踪"参数流"：哪些外部估计（引文）、哪些内部估计（引力/矩匹配）、哪些校准（直接设定）？三类来源的可信度与结论敏感性如何？"参数审计"是本课程精读结构论文的标准动作。</div>
+
+<h2>4.4 精读两篇税收/错配标杆</h2>
+
+<h3>4.4.1 Fajgelbaum, Morales, Serrato &amp; Zidar：State Taxes and Spatial Misallocation</h3>
+<p><strong>问题</strong>：美国州税差异在多大程度扭曲空间配置？<strong>框架</strong>：Armington 贸易 + 工人跨州迁移 + 企业区位，州税按所得/消费/利润进入。<strong>识别</strong>：引力型迁移流估计弹性；州税改的自然实验做简约式锚点。<strong>反事实</strong>：统一州税/最优税制的福利核算——州税差异造成可观空间错配损失且分布不均。<strong>教学要点</strong>：①"税收版 QSE"完整模板（每税种按经济身份进入模型）；②福利分解（总量 vs 分配）标准做法；③方法可直接移植到中国央地税制反事实（第 8、10 讲）。</p>
+
+<h3>4.4.2 Hsieh &amp; Moretti (2019)：Housing Constraints and Spatial Misallocation</h3>
+<p><strong>问题</strong>：高生产率城市住房约束阻止劳动力流入，总量损失多大？<strong>框架</strong>：Rosen–Roback + 技能差异 + 住房供给弹性（地理/规制识别）。<strong>核心公式</strong>：地方生产率冲击的总产出效应 = 各城市就业反应加权和，权重取决于住房供给弹性。<strong>结论</strong>：1964–2009 美国住房约束显著降低总量增长（幅度对工资弹性设定敏感）。<strong>争议与教学价值</strong>：①参数批评（Gyourko 等）；②后续再校准改变幅度——展示结构结论对参数的固有敏感性；③示范 QSE 最有影响力的用法：把因果链压缩成一个可复制数字。<strong>中国移植</strong>：把"住房约束"换成"土地指标 + 户籍"双重约束，估算深圳/上海的约束总量成本——期末论文高潜力题（第 14 讲）。</p>
+
+<h3>4.4.3 两篇对照</h3>
+<table>
+<tr><th>维度</th><th>Fajgelbaum et al.</th><th>Hsieh &amp; Moretti</th></tr>
+<tr><td>政策对象</td><td>州税体系</td><td>住房供给规制</td></tr>
+<tr><td>空间单元</td><td>州（区域间）</td><td>城市（城市间）</td></tr>
+<tr><td>摩擦来源</td><td>迁移 + 贸易成本</td><td>迁移 + 住房供给弹性</td></tr>
+<tr><td>关键弹性</td><td>迁移、贸易</td><td>工资（空间）、住房供给</td></tr>
+<tr><td>错配度量</td><td>福利损失（消费等价）</td><td>总量产出损失</td></tr>
+<tr><td>主要争议</td><td>税收归宿假设</td><td>弹性设定与总量幅度</td></tr>
+<tr><td>中国移植</td><td>央地税制/开发区反事实</td><td>土地指标 + 户籍约束核算</td></tr>
+</table>
+
+<h2>4.5 从 QSE 到空间财政学：融合框架的量化</h2>
+<p>回到第 2 讲式 (2.5)：max W<sub>i</sub> 关于 (t<sub>i</sub>, g<sub>i</sub>, 土地供给)。QSE 提供：①目标函数 V(t, g; w, P) 由量化均衡计算；②税基 B<sub>i</sub>(w, P) 由资本化后的均衡价格内生；③策略互动（竞争环）通过迭代"邻区最优反应"近似纳什均衡。三个前沿方向即第 5–13 讲路线图：</p>
+<table>
+<tr><th>方向</th><th>讲次</th><th>框架组合</th></tr>
+<tr><td>城市内财政 QSE</td><td>第 7 讲</td><td>AMM + 公共服务 + 财产税/土增税 → 学区划片、地铁、旧改反事实</td></tr>
+<tr><td>地区间财政 QSE</td><td>第 10 讲</td><td>Armington/NEG + 转移支付 + 开发区 → 区域政策核算</td></tr>
+<tr><td>动态财政 QSE</td><td>第 12 讲</td><td>DRH + 政府债务 + 人口演化 → 收缩城市财政可持续</td></tr>
+</table>
+<p>统一工作流：<strong>观测数据 → 引力/矩估计弹性 → exact hat algebra 反事实 → 福利与归宿分解</strong>。期末论文要求完成一个"迷你版"工作流（四步全走，不必完整）。</p>
+
+<h2>本章小结</h2>
+<ol style="margin-left:22px;">
+<li>QSE 族谱四层级（城市间/城市内/区域间/动态），选择原则是匹配政策单元、效应类型与数据；</li>
+<li>部件箱六件：离散选择区位（弹性之根）、住房土地、通勤迁移、集聚拥挤、政府财政工具、均衡求解；</li>
+<li>参数三来源（引力/矩匹配/外部校准）+ "参数审计"习惯；</li>
+<li>Exact hat algebra 只解相对变化——当代默认工作流；</li>
+<li>Fajgelbaum et al. 展示税收全面嵌入的模板；Hsieh–Moretti 展示核算公式的政策影响力与参数敏感性双刃剑；</li>
+<li>QSE 使第 2 讲融合框架首次可计算——"理论 → 方法"合拢，第 5–13 讲是部件箱的组合实例。</li>
+</ol>
+
+<h2>关键术语表</h2>
+<table>
+<tr><th>术语</th><th>英文</th><th>一句话定义</th></tr>
+<tr><td>补偿性工资差异</td><td>compensating differential</td><td>高工资/低房价补偿差的 amenity 或通勤成本</td></tr>
+<tr><td>离散选择模型</td><td>discrete choice model</td><td>个体按含随机冲击的效用在有限区位间选择</td></tr>
+<tr><td>贸易弹性</td><td>trade elasticity</td><td>贸易流对双边成本的弹性，引力方程核心参数</td></tr>
+<tr><td>帽子代数</td><td>exact hat algebra</td><td>只求解相对变化、消去水平值的反事实方法</td></tr>
+<tr><td>矩匹配</td><td>moment matching</td><td>调参数使模型统计量吻合数据矩</td></tr>
+<tr><td>空间错配</td><td>spatial misallocation</td><td>要素因摩擦无法配置到最高边际产出区位的损失</td></tr>
+<tr><td>集聚经济</td><td>agglomeration economies</td><td>密度提升生产率的正外部性</td></tr>
+<tr><td>拥挤效应</td><td>congestion effects</td><td>密度提高成本的负外部性</td></tr>
+<tr><td>住房供给弹性</td><td>housing supply elasticity</td><td>房价上升 1% 引致住房数量的百分比变化</td></tr>
+</table>
+
+<h2>思考与练习</h2>
+<ol class="ex">
+<li>从（4.1）推导：两城市 amenity 相同、供给弹性分别为 0 与 ∞ 时，10% 工资差异下的房价与人口分布差异；</li>
+<li>说明引力方程（4.3）双向固定效应各吸收什么，为何距离系数识别不依赖水平值；</li>
+<li>参数审计：在 Fajgelbaum et al. 框架列出三类参数来源各两个，指出最可能主导福利结论的参数；</li>
+<li>Hsieh–Moretti 结论对哪个弹性最敏感？设计敏感性检验方案；</li>
+<li>【计算练习】两地区 exact hat algebra 最小算例：给定迁移弹性 θ、A 地区 5% 所得税冲击，写出 hat 方程组并求解均衡人口与房价变化——期末论文工作流迷你版；</li>
+<li>【中国移植设计题】把 Hsieh–Moretti 的"住房约束"换成"土地指标 + 户籍"双重约束：写出额外方程与数据清单，指出最难识别的参数。</li>
+</ol>
+
+<h2>参考文献</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Redding, S. J., &amp; Rossi-Hansberg, E. (2017). <i>ARE</i>, 9, 21–58.</li>
+<li>Roback, J. (1982). Wages, rents, and the quality of life. <i>JPE</i>, 90(6), 1257–1278.</li>
+<li>Eaton, J., &amp; Kortum, S. (2002). <i>Econometrica</i>, 70(5), 1741–1779.</li>
+<li>Dekle, R., Eaton, J., &amp; Kortum, S. (2008). <i>IMF Staff Papers</i>, 55(3), 511–540.</li>
+<li>Ahlfeldt, G. M., Redding, S. J., Sturm, D. M., &amp; Wolf, N. (2015). <i>Econometrica</i>, 83(6), 2127–2189.</li>
+<li>Fajgelbaum, P., Morales, E., Serrato, J. C. S., &amp; Zidar, O. State taxes and spatial misallocation.（版本信息以原文为准）</li>
+<li>Hsieh, C.-T., &amp; Moretti, E. (2019). <i>AEJ: Macro</i>, 11(2), 1–39.</li>
+<li>Desmet, K., &amp; Rossi-Hansberg, E. (2014/2015). Spatial development. <i>AER</i>（以原文为准）.</li>
+<li>Desmet, K., Nagy, D. K., &amp; Rossi-Hansberg, E. (2018). <i>JPE</i>, 126(3), 903–983.</li>
+<li>Allen, T., &amp; Arkolakis, C. (2014). <i>QJE</i>, 129(3), 1085–1140.</li>
+<li>Monte, F., Redding, S. J., &amp; Rossi-Hansberg, E. (2018). Commuting, migration, and local labor markets. <i>QJE</i>, 133(2), 765–816.</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>陆铭等. 空间政治经济学系列. 《经济研究》《经济学（季刊）》.</li>
+<li>刘修岩等. 集聚经济参数实证. 《中国工业经济》.</li>
+<li>郑思齐. 土地供给与城市空间结构系列. 《城市与区域规划研究》.</li>
+</ul>
+<h4>延伸阅读</h4>
+<ul>
+<li>Yamagishi, A. Quantitative Spatial Economics 讲义.</li>
+<li>Krugman, P. (2009). <i>AER</i>, 99(3), 561–571.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 4 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>

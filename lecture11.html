@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 11 讲 · 空间不平等及其治理</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:900px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:28px;font-weight:700;line-height:1.35;}
+.sub{margin-top:10px;color:var(--muted);font-size:14.5px;}
+h2{font-size:21px;margin:44px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 11 讲（共 14 讲）</div>
+<h1>空间不平等及其治理</h1>
+<div class="sub">测度三纪律 · 四个来源机制 · 集聚中走向平衡 · place vs people 工具谱系 · 中国区域协调政策的前沿解读</div>
+</header>
+
+<h2>本章导读</h2>
+<p>区域差距是中国公共政策最重要也最情绪化的议题之一。本讲的任务是把"差距该不该管、怎么管"从立场之争转化为结构分析：测度层（真实收入、Theil 分解、地区 vs 个人维度）、机制层（四个来源）、规范层（"在集聚中走向平衡"的模型逻辑与适用条件）、工具层（place-based vs people-based 谱系与三篇标杆证据地图）、中国层（区域协调政策序列的前沿解读）、研究层（六题清单）。与第 10 讲的关系：第 10 讲给了机器（区域间 QSE），本讲给机器装上分配问题的"社会规划者视角"。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>掌握测度三纪律：真实收入、城市间/内分解、地区差距 ≠ 个人福利差距；</li>
+<li>解释四个产生机制并区分"市场失灵 vs 市场正常"；</li>
+<li>重构效率—公平 debate：写出"在集聚中走向平衡"的逻辑与适用条件；</li>
+<li>比较两类工具的适用场景、证据强度与组合逻辑；</li>
+<li>评价中国区域政策序列在效率—公平前沿上的位置；</li>
+<li>设计一个 people/place 分离的结构核算研究。</li>
+</ol></div>
+
+<h2>11.1 测度层：不平等度量学的三个纪律</h2>
+<p><strong>纪律一：名义 ≠ 真实收入。</strong>房价调整可使名义差距显著缩水（幅度随年份与城市组而变，课堂核算）。以名义 GDP 为目标的区域政策会高估"差距的痛苦"、指错补偿方向——且真实收入尚未计入 amenity 补偿（Roback 第二重调整）。</p>
+<p><strong>纪律二：城市间 vs 城市内分解。</strong>Theil 指数精确分解 T = T_B（城市间）+ T_W（城市内）。共同发现：城市化推进中城市间分量先升后稳、城市内分量（尤其大城市内部）持续上升——<strong>不平等的"战场"从地区间转向城市内部</strong>（房价隔离、学区分割）。区域政策对总体不平等的边际作用递减，城市内政策权重应上升。</p>
+<p><strong>纪律三：地区不平等 ≠ 个人不平等。</strong>两者可反向运动——人口从穷地区流向富地区时，地区均值差距可能扩大（留下者更穷）而个人福利差距缩小（迁移者收入跃升）。一切"区域公平"政策必须先声明：目标函数是 place 的效用还是 people 的福利——这也是"撤并村庄 vs 原地振兴"争论的经济学本质。</p>
+
+<div class="box"><div class="t">方法角 BOX 11.1｜Theil 分解与迁移动态的读法</div>
+陷阱：人口迁移本身改变分组权重——T_B 下降可能只是人口重构而非地区改善。规范做法：同时报告"固定人口分组"（每人按初始地）的反事实分解，把<strong>迁移的贡献</strong>从<strong>地区改善的贡献</strong>中分离。这个核算是 people/place 之争的度量学基础。</div>
+
+<h2>11.2 机制层：空间不平等的四个来源</h2>
+<table>
+<tr><th>来源</th><th>机制</th><th>市场失灵判断</th><th>政策着手点</th></tr>
+<tr><td>①集聚自然不等</td><td>生产率随密度上升（α&gt;0）</td><td>非失灵；但内藏两个真失灵：知识外溢未定价（大城市可能"过小"）+ 集聚租金分配机制缺失</td><td>分配通道（增值捕获、第 5 讲）</td></tr>
+<tr><td>②准入门槛</td><td>住房约束 + 户籍 ξ 阻止流入（HM 通道）</td><td>制度产物，纯失灵</td><td>最易着手：降门槛同时改善效率与公平（输家 = 在位房主）</td></tr>
+<tr><td>③历史锁定与多重均衡</td><td>初始条件 + 循环累积因果 → 低均衡陷阱</td><td>协调失败型失灵</td><td>大推动可能有超线性回报（TVA 教训：当代弹性已变）</td></tr>
+<tr><td>④财政通道</td><td>生产地原则逆再生 + 转移支付再生的对冲</td><td>财政制度本身"生产"不平等</td><td>分配规则改革（第 8 讲）</td></tr>
+</table>
+
+<h2>11.3 规范层：效率 vs 公平的再认识</h2>
+<p><strong>"在集聚中走向平衡"三步逻辑</strong>（陆铭–陈钊系列的表述）：①集聚提高效率；②低摩擦流动使个人趋同（"人向高处走"而非"把高处搬低"）；③地区均值差距可能扩大但真实收入与个人福利趋同——"平衡"的对象是人，不是地区 GDP。<strong>适用条件（常被忽略的一半）</strong>：流动足够低摩擦（户籍、住房、社保可携带）且迁入地容纳真实（钱随人走）。条件不满足时，退化为"集聚中分化"——政策重点从"鼓励流动"变为"降低流动的制度成本"。</p>
+<p><strong>两个前沿核算</strong>：①真实收入收敛——调整后差距显著缩小，但计入家庭分离成本（留守）后收敛打折，<strong>非货币迁移成本必须货币化</strong>（中国语境的关键修正项）；②个人福利核算——用 CFPS/CHFS 直接计算福利分布对政策的反应，绕过地区指标的代理问题。</p>
+
+<h2>11.4 工具层：治理谱系与证据地图</h2>
+<table>
+<tr><th>工具类</th><th>具体工具</th><th>优势场景</th><th>主要风险</th></tr>
+<tr><td>Place-based</td><td>均等化转移支付</td><td>迁移摩擦大、服务底线</td><td>滞留效应（第 10 讲）</td></tr>
+<tr><td>Place-based</td><td>开发区/税收优惠</td><td>多重均衡证据存在时</td><td>拾取、囚徒困境</td></tr>
+<tr><td>Place-based</td><td>大基建</td><td>网络效应明确的走廊</td><td>虹吸区间、门槛效应</td></tr>
+<tr><td>People-based</td><td>迁移支持（住房/信息/安置）</td><td>门槛机制主导时</td><td>迁入地容纳压力</td></tr>
+<tr><td>People-based</td><td>服务可携带（钱随人走）</td><td>一切情境的底座</td><td>结算制度复杂</td></tr>
+<tr><td>People-based</td><td>教育与技能投资</td><td>长期根本、地点中性</td><td>周期长、外流</td></tr>
+</table>
+<p><strong>三篇标杆的证据地图</strong>：Kline–Moretti (TVA) = "什么时候 place-based 有效"的历史下界 + 当代不可复制边界；Austin–Glaeser–Summers = 迁移摩擦现实下 place-based 有理的政策文献代表；Gaubert–Kline–Yuchi = place-based 的<strong>区内归宿</strong>（收益归房东与高技能者——第 5 讲归宿逻辑在区域尺度重演）。<strong>没有普适答案——工具选择 =（摩擦 × 陷阱 × 归宿）的函数。</strong></p>
+<p><strong>组合三原则</strong>：①底座原则（可携带与迁移支持先行）；②诊断原则（投放前诊断多重均衡证据，纯差距不构成理由）；③归宿原则（每项工具写明最终受益人，落空者配套捕获机制）。</p>
+
+<h2>11.5 中国层：区域协调政策序列的前沿解读</h2>
+<table>
+<tr><th>政策</th><th>主导工具</th><th>框架位置</th><th>结构评价要点</th></tr>
+<tr><td>西部大开发</td><td>基建+转移+产业</td><td>门槛+滞留混合</td><td>总量回报低于沿海集中（Chen 类）；成败在基建 τ 位置（虹吸 vs 整合）</td></tr>
+<tr><td>对口支援/脱贫攻坚</td><td>定向转移</td><td>people+place 混合</td><td>脱贫攻坚是底线 people-based 成功序列；对口弹性 vs 规则化（第 9 讲）</td></tr>
+<tr><td>均等化转移支付</td><td>公式化纵向转移</td><td>服务底线</td><td>公式化是进步；边际激励扭曲仍在</td></tr>
+<tr><td>都市圈战略</td><td>同城化+土地统筹</td><td>门槛降低</td><td>方向支持"集聚中平衡"；成败在可携带性与指标统筹落实</td></tr>
+<tr><td>户籍改革</td><td>落户放宽</td><td>ξ ↓（底座）</td><td>分批放宽 + 大城市例外——不彻底时错配仍在</td></tr>
+</table>
+<p><strong>整体解读</strong>：中国序列正从 place 为主向 place + people 混合演化，但两大错配未解——迁入地门槛与教育随迁的"最后一公里"。用第 10 讲语言：<strong>前沿外推的最大空间不在"给落后地区更多"，而在"降低向发达地区流动的制度成本"</strong>——效率与公平同向改善，但政治上最难（在位者租金稀释）。</p>
+
+<div class="box"><div class="t">中国实践 BOX 11.2｜"撤并村庄 vs 原地振兴"的框架化判断</div>
+经济学解剖：撤并 = 强制 people-based（迁移成本内部化给农民）+ 财政逻辑（人均服务成本，第 12 讲）；原地振兴 = place-based。框架三问：①迁移自愿且补偿充分吗（people 工具正当性前提）；②该地存在多重均衡证据吗（否则振兴边际回报低）；③公共服务网络成本是否已过临界（低于网络最低效率规模时集中供给优于分散维持）。三问替代"情感 vs 效率"的伪对立。</div>
+
+<h2>11.6 研究层：可识别问题清单</h2>
+<table>
+<tr><th>问题</th><th>冲击/变异</th><th>方法</th><th>数据</th></tr>
+<tr><td>真实收入差距演化</td><td>房价面板 × 收入分布</td><td>核算+分解</td><td>城市统计、房价微观、CFPS</td></tr>
+<tr><td>迁移对个人 vs 地区差距的贡献</td><td>普查迁移矩阵</td><td>固定分组反事实 Theil</td><td>普查 2000/2010/2020</td></tr>
+<tr><td>落户放宽的迁移响应</td><td>分批放宽</td><td>CS 交错 DID</td><td>政策文本 + 迁移微观数据</td></tr>
+<tr><td>转移支付的滞留/回流效应</td><td>均衡性公式断点</td><td>RD + 结构反事实</td><td>县级转移支付数据</td></tr>
+<tr><td>城市内隔离</td><td>学区房价格 + 人口构成</td><td>空间 RD + 分选模型</td><td>第 5 讲数据源</td></tr>
+<tr><td>区域政策的区内归宿</td><td>开发区 DID + 资本化</td><td>两段式（第 3→10 讲）</td><td>企业 + 房价匹配数据</td></tr>
+</table>
+
+<h2>本章小结</h2>
+<ol style="margin-left:22px;">
+<li>测度三纪律：真实收入、城市间/内分解（战场向城市内转移）、地区 ≠ 个人——一切政策先声明目标函数；</li>
+<li>四来源：集聚自然不等（真失灵藏于分配与定价）、准入门槛（最可着手）、历史锁定（大推动的条件）、财政通道（不平等被财政制度生产）；</li>
+<li>"集聚中走向平衡"的逻辑与适用条件——条件不满足时退化为"集聚中分化"；</li>
+<li>工具谱系六件 + 三篇标杆地图：工具选择 =（摩擦 × 陷阱 × 归宿）的函数；组合三原则；</li>
+<li>中国序列走向混合，但迁入地门槛与可携带性未解——前沿外推最大空间在降低流动的制度成本；</li>
+<li>六个可识别问题 + people/place 核算设计 = 本讲研究出口。</li>
+</ol>
+
+<h2>关键术语表</h2>
+<table>
+<tr><th>术语</th><th>英文</th><th>一句话定义</th></tr>
+<tr><td>真实收入差距</td><td>real income gap</td><td>经房价/生活成本调整后的福利差距</td></tr>
+<tr><td>Theil 分解</td><td>Theil decomposition</td><td>总不平等分解为组间与组内分量</td></tr>
+<tr><td>在集聚中走向平衡</td><td>balance through agglomeration</td><td>以要素流动实现人均趋同而非总量均衡</td></tr>
+<tr><td>基于地点/人的政策</td><td>place-/people-based</td><td>针对地区 vs 个人的工具分野</td></tr>
+<tr><td>大推动</td><td>big push</td><td>打破低均衡陷阱的协调性投资</td></tr>
+<tr><td>多重均衡</td><td>multiple equilibria</td><td>同一参数下多个稳定格局并存</td></tr>
+<tr><td>可携带性</td><td>portability</td><td>服务资格随人跨区转移的程度</td></tr>
+<tr><td>迁移成本货币化</td><td>monetizing migration costs</td><td>把家庭分离等非货币成本纳入核算</td></tr>
+<tr><td>逆再生性</td><td>regressivity</td><td>再分配系统放大差距的性质</td></tr>
+</table>
+
+<h2>思考与练习</h2>
+<ol class="ex">
+<li>用本省城市数据计算名义 vs 房价调整后市际差距，报告比率与五年演化；</li>
+<li>固定分组反事实 Theil 的核算方案设计（写出公式框架）；</li>
+<li>"集聚中走向平衡"的反例检验：找出迁移自由但分化加深的情境，诊断哪个适用条件失效；</li>
+<li>用证据地图评价"中西部再建十个国家级新区"：机制诊断、预期归宿、总量判断各一段；</li>
+<li>用 Box 11.2 三问分析一个真实撤并/振兴争议，给出与直觉不同的结论点；</li>
+<li>【结构核算题】为迁移支持政策设计 people 视角福利核算：收入跃升 + 家庭分离成本 − 拥挤外部性，列出每项的数据与货币化方案。</li>
+</ol>
+
+<h2>参考文献</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Hsieh, C.-T., &amp; Moretti, E. (2019). <i>AEJ: Macro</i>, 11(2), 1–39.</li>
+<li>Kline, P., &amp; Moretti, E. (2014). <i>QJE</i>, 129(1), 275–331.</li>
+<li>Austin, B., Glaeser, E., &amp; Summers, L. (2018). Jobs for the heartland. <i>BPEA</i>, Spring, 151–232.</li>
+<li>Gaubert, P. M., Kline, P. M., &amp; Yuchi, D. Place-based policies and inequality within regions.（NBER WP）</li>
+<li>Roback, J. (1982). <i>JPE</i>, 90(6), 1257–1278.</li>
+<li>Diamond, R. (2016). The determinants and welfare implications of US workers' diverging location choices. <i>AER</i>, 106(3), 479–524.</li>
+<li>Moretti, E. (2012). <i>The New Geography of Jobs</i>.</li>
+<li>Combes, P.-P., et al. 城市工资差距分解系列.</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>陆铭, 陈钊. 在集聚中走向平衡系列. 《中国社会科学》《经济研究》.</li>
+<li>李实, 罗楚亮等. 收入分配与迁移研究.</li>
+<li>范子英. 转移支付与区域差距系列.</li>
+<li>脱贫攻坚与区域战略评估系列. 《经济研究》《管理世界》.</li>
+</ul>
+<h4>延伸阅读</h4>
+<ul>
+<li>Barca, McCann, &amp; Rodríguez-Pose (2012). <i>JRS</i>, 52(1), 134–152.（place-based vs place-neutral 争论）</li>
+<li>World Bank. (2009). <i>WDR: Reshaping Economic Geography</i>.</li>
+<li>Neumark &amp; Simpson (2015). Handbook 章节.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 11 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>

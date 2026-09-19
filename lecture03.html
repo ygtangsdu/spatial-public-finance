@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 3 讲 · 方法论基础 1：Place-Based Policy Evaluation Methods</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:880px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:29px;font-weight:700;line-height:1.35;}
+.sub{margin-top:10px;color:var(--muted);font-size:14.5px;}
+h2{font-size:21px;margin:44px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.formula{text-align:center;font-family:Georgia,"Times New Roman",serif;font-style:italic;margin:14px 0;font-size:16px;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 3 讲（共 14 讲）</div>
+<h1>方法论基础 1：Place-Based Policy Evaluation Methods（简约式估计）</h1>
+<div class="sub">DID 与交错处理革命 · 合成控制 · 空间断点 · 溢出与拾取 · TVA 与中国开发区精读</div>
+</header>
+
+<h2>本章导读</h2>
+<p>空间财政学的实证素材——开发区、特区、转移支付、地铁、学区划片、房产税试点——几乎全部是"给特定地点的政策"。本讲系统讲授评估这类政策的简约式工具：双重差分（DID）及其最新计量修正（交错处理、负权重问题）、事件研究法、合成控制法、断点回归（含空间断点），以及空间场景特有的两大威胁——空间溢出导致的 SUTVA 违背与"拾取"导致的处理效应解释难题。核心论点：<strong>简约式估计回答"局部处理效应"，但 place-based policy 的政策问题几乎总是"总体净效应"——两者之间的鸿沟正是第 4 讲结构方法的入口。</strong>以 Neumark &amp; Simpson (2015) Handbook 综述为地图，Kline–Moretti (2014) TVA 与 Lu–Wang–Zhu (2019) 中国开发区为精读样本。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>掌握 DID、事件研究、合成控制、RD 四类识别策略的核心假设、检验程序与常见陷阱；</li>
+<li>理解交错 DID 负权重问题（Goodman-Bacon 分解）及 CS/SA、dCDH 等稳健估计量的逻辑；</li>
+<li>运用空间溢出的处理设计：剔除缓冲带、估计溢出效应、溢出稳健估计；</li>
+<li>辨析"拾取 vs 创造"对处理效应解释的含义；</li>
+<li>评估经典 place-based 研究（企业区、TVA、中国开发区）的识别策略；</li>
+<li>设计针对中国某空间政策的完整简约式评估方案。</li>
+</ol></div>
+
+<h2>3.1 Place-Based Policy：定义、类型与评估的特殊性</h2>
+<p>Neumark &amp; Simpson (2015) 的界定：<strong>以改变特定地理区域内企业或家庭经济激励为直接目标的政策</strong>，理论依据通常是集聚外部性、知识溢出、劳动力市场池化等空间市场失灵。</p>
+<table>
+<tr><th>类型</th><th>典型工具</th><th>代表案例</th></tr>
+<tr><td>税收激励型</td><td>企业区、税收减免、加速折旧</td><td>美国州级企业区、法国 ZFU</td></tr>
+<tr><td>制度试验区型</td><td>经济特区、开发区、自贸区</td><td>中国开发区体系</td></tr>
+<tr><td>基础设施型</td><td>大型基建、交通走廊</td><td>TVA、高铁、跨市地铁</td></tr>
+<tr><td>财政转移型</td><td>均等化转移、专项补助、对口支援</td><td>中国转移支付、欧盟结构基金</td></tr>
+<tr><td>土地供给型</td><td>用地指标倾斜、土地整治、城市更新</td><td>增减挂钩、棚改</td></tr>
+</table>
+<p>评估层次分三层：企业层（投资、就业、生产率）、区域层（产值、就业、房价）、福利层（总产出与分配）。<strong>企业层"显著有效"与区域层"净效应为零"可以并存</strong>——这正是拾取问题的表现。</p>
+<p>三个结构性困难：①<strong>政策定点非随机</strong>（瞄准"表现差"或"潜力大"的地区）；②<strong>政策时点非随机</strong>（与经济、政治周期同步）；③<strong>效应空间边界模糊</strong>（外溢污染对照组——SUTVA 违背）。第三个是 place-based 特有的，见 3.4 节。</p>
+
+<h2>3.2 工具一：双重差分（DID）与事件研究</h2>
+<h3>3.2.1 基准 DID</h3>
+<div class="formula">（3.1）　Y<sub>it</sub> = α + β·Treat<sub>i</sub> + γ·Post<sub>t</sub> + τ·(Treat<sub>i</sub> × Post<sub>t</sub>) + X'<sub>it</sub>θ + ε<sub>it</sub></div>
+<p>识别假设是<strong>平行趋势</strong>。两个易忽视的要点：①平行趋势不可检验，但政策前趋势可比性（pre-trends）可检验；②DID 识别"相对效应"——若政策同时影响对照组（溢出），τ 是处理与对照组之差而非绝对效应——place-based 场景的常态。</p>
+
+<h3>3.2.2 事件研究：预趋势与动态效应</h3>
+<div class="formula">（3.2）　Y<sub>it</sub> = α<sub>i</sub> + δ<sub>t</sub> + Σ<sub>k≠−1</sub> τ<sub>k</sub>·1{t − E<sub>i</sub> = k} + ε<sub>it</sub></div>
+<p>{τ<sub>k</sub>} 给出动态效应路径；k &lt; 0 的系数应不显著。事件研究三重功能：诊断（预趋势）、动态（效应是否累积/衰减）、安慰剂结构。标准应用：地铁开通与房价（第 5 讲）、开发区与县级投资。</p>
+
+<h3>3.2.3 交错 DID 的负权重革命（2018–2021）</h3>
+<p>处理时点交错时，TWFE 不再是任何因果参数的一致估计。Goodman-Bacon (2021) 分解：TWFE = 所有"两组两期"比较的加权平均，其中包含<strong>"晚处理组作为早处理组对照"的比较</strong>——对照本身已被处理，权重可能为负，TWFE 甚至可能偏离所有真实效应的符号。稳健估计量：</p>
+<table>
+<tr><th>估计量</th><th>核心思想</th></tr>
+<tr><td>Callaway &amp; Sant'Anna (2021)</td><td>按首次处理时点分组，逆概率加权的组—时期 ATT，允许异质性效应后聚合</td></tr>
+<tr><td>Sun &amp; Abraham (2021)</td><td>交互加权（IW）修正事件研究系数的污染</td></tr>
+<tr><td>de Chaisemartin &amp; D'Haultfœuille (2020)</td><td>识别"已处理单位保持处理状态下的平均效应"，明确 TWFE 污染来源</td></tr>
+<tr><td>Borusyak, Jaravel &amp; Spiess (2024)</td><td>以插补（imputation）视角统一构造未观测反事实</td></tr>
+</table>
+<p><strong>实践守则</strong>：凡交错处理（开发区分批、房产税试点、转移支付分档），必须（a）报告 Goodman-Bacon 分解或敏感性；（b）主回归用 CS/SA 类稳健估计量；（c）事件研究呈现动态路径。</p>
+
+<h3>3.2.4 政策时点的内生性</h3>
+<p>应对：①预期效应检验（公布与实施间的提前反应）；②排除预期期的事件窗；③匹配 + DID 组合；④极端情形转向合成控制或结构方法。</p>
+
+<h2>3.3 工具二与工具三：合成控制与断点回归</h2>
+<h3>3.3.1 合成控制法</h3>
+<p>适用于<strong>单一/少数处理单位、政策时点明确、长面板</strong>（沪渝房产税试点、深圳特区、海南自贸港）。用未处理地区加权组合合成处理地区的政策前路径：</p>
+<div class="formula">（3.3）　最小化 Σ<sub>t≤T0</sub> (Y<sub>1t</sub> − Σ<sub>j&gt;1</sub> w<sub>j</sub>Y<sub>jt</sub>)²，w<sub>j</sub> ≥ 0，Σw<sub>j</sub> = 1</div>
+<p>诊断三件事：政策前拟合优度、安慰剂检验（真实效应是否处于安慰剂分布尾部）、权重集中度。扩展：广义合成控制（Xu 2017）、合成 DID（Arkhangelsky et al. 2021）。</p>
+
+<h3>3.3.2 空间断点回归（Spatial RD）</h3>
+<p>政策以地理边界划界（学区、开发区、试点区）时，利用边界两侧邻近可比性识别：</p>
+<div class="formula">（3.4）　Y = τ·D(boundary) + f₁(坐标·1{左侧}) + f₂(坐标·1{右侧}) + ε</div>
+<p>两个空间特有威胁：①<strong>多重断点混淆</strong>——边界同时是行政区界/治安辖区/历史地籍线时无法归因；②<strong>边界附近的均衡性</strong>——家庭/企业可跨边界选址时，边界附近的"构成"本身内生选择。Black (1999) 学区边界断点是范本（第 5 讲精读）。</p>
+
+<h3>3.3.3 工具选择决策树</h3>
+<table>
+<tr><th>场景</th><th>首选工具</th><th>代表研究</th></tr>
+<tr><td>多地区、单一时点</td><td>两期 DID + 事件研究</td><td>地铁开通与房价</td></tr>
+<tr><td>多地区、交错时点</td><td>稳健交错 DID（CS/SA）</td><td>开发区、转移支付</td></tr>
+<tr><td>少数处理单位、长面板</td><td>合成控制 + 安慰剂</td><td>房产税试点、特区</td></tr>
+<tr><td>地理边界清晰、局部可比</td><td>空间 RD</td><td>学区、开发区边界</td></tr>
+<tr><td>政策强度连续/配额</td><td>RD（评分断点）</td><td>试点名单按评分截断</td></tr>
+</table>
+
+<div class="box"><div class="t">方法角 BOX 3.1｜"可信性革命"的中国适配</div>
+中国空间政策的三点特殊性需在设计中显式处理：①政策多层级叠加（开发区内又有新区、自贸区叠加开发区）——处理定义需在"政策束"与"单一政策"间小心切割；②行政边界同时承载多政策——空间 RD 的多重断点问题更严重，需寻找"仅目标政策跳跃"的边界段；③行政区划与统计口径的历年修订——面板平衡需逐年核对区划代码。</div>
+
+<h2>3.4 空间场景的两大特有威胁</h2>
+<h3>3.4.1 威胁一：空间溢出与 SUTVA 违背</h3>
+<p>place-based 政策按定义改变区域间相对吸引力：投资可能来自邻县（负溢出），地铁抬高相邻区房价（正溢出），转移支付吸引邻区人口。后果：<strong>溢出为负则 DID 高估、为正则低估，且对照组不再代表反事实。</strong>应对三级方案：</p>
+<table>
+<tr><th>方案</th><th>做法</th><th>代价</th></tr>
+<tr><td>剔除</td><td>删除处理区周边缓冲带内的对照单位</td><td>损失功效，未利用溢出信息</td></tr>
+<tr><td>估计</td><td>加入"到最近处理区距离 × Post"项估计溢出梯度（Butts 类框架）</td><td>需溢出函数形式假设</td></tr>
+<tr><td>重构</td><td>以总区域为单位（溢出内部消化）或结构模型显式处理</td><td>走向第 4 讂结构方法</td></tr>
+</table>
+
+<h3>3.4.2 威胁二：拾取（Relocation）与"创造 vs 搬迁"</h3>
+<p>企业层效应的三个来源：<strong>新创造</strong>（原本不存在的活动）、<strong>拾取</strong>（从他区搬来）、<strong>转移攫取</strong>（把增长提前/抢来）。只有第一类增加总量。识别策略：①总量核算（以省/全国为单位重复估计，效应消失即拾取为主）；②投入产出追踪（新增企业是否只是供应链重排）；③结构判断（Lu–Wang–Zhu 明确区分创造与拾取，发现开发区提升生产率且创造新活动，但存在对区外企业的拾取——比例以原文分解为准）。<strong>方法论教训</strong>：简约式能发现拾取的存在，把"创造比例"算清楚需要结构模型——第 10 讲接续。</p>
+
+<div class="box"><div class="t">概念辨析 BOX 3.2｜ATT、LATE 与福利效应的"多重身份"</div>
+简约式估计的是 ATT 或 LATE；政策评估需要的是含均衡反馈、溢出与拾取的净福利效应。三者的距离在 place-based 场景特别大——这是"识别出显著正效应但政策整体无益"悖论的根源。Kline–Moretti (2014) 的示范价值：先以 DID 识别 TVA 局部效应，再用集聚经济的结构逻辑外推总福利，最后指出"当代集聚已饱和，TVA 不可复制"——简约式与结构式的接力棒交接。</div>
+
+<h2>3.5 精读两篇标杆</h2>
+<h3>3.5.1 Kline &amp; Moretti (2014)：TVA 与"大推动"</h3>
+<p>背景：TVA（1933–）是美国史上最大区域发展政策。设计：覆盖县 vs 可比县的长期 DID + 农业转型事件研究。发现：①TVA 显著且持久提高本地制造业就业（效应持续数十年）；②机制是"大推动"——基建网络 + 集聚经济的协调投资解除低水平均衡陷阱；③关键结构判断：TVA 成功的前提是当时集聚经济强，当代同等投入净收益大打折扣。<strong>示范意义</strong>：一篇研究同时展示"识别—机制—外部有效性边界"三层贡献——place-based 评估的黄金标准。</p>
+
+<h3>3.5.2 Lu, Wang &amp; Zhu (2019)：中国开发区的创造、集聚与拾取</h3>
+<p>设计：利用开发区分批设立的时间与地理变异。发现：①显著提高区内企业生产率；②吸引新企业进入（创造效应），但部分效应来自邻近未批区企业的再配置；③集聚收益为正但小于局部表观效应。<strong>连接</strong>：本讲是"先简约式、后结构化"路线的中继站——第 10 讲读 Chen 等 (2019) 的结构版本。</p>
+
+<h3>3.5.3 Neumark &amp; Simpson (2015) 的证据地图</h3>
+<p>三条主结论：①企业区类税收激励的就业效应总体混合，多数严格研究发现小到零的净效应（部分例外如联邦 Empowerment Zone）；②政策"强度"与"捆绑性"（基建+培训+税收组合拳）与效应正相关；③识别质量决定结论——早期无控制组研究系统性高估。<strong>"识别越严、效应越小"的规律本身就是本讲存在的社会理由。</strong></p>
+
+<h2>3.6 从评估到设计：简约式证据的用途与边界</h2>
+<p>三个用途：①<strong>参数输入</strong>——弹性成为第 4 讲结构模型的估计目标；②<strong>政策校准</strong>——边际效应为零提示补贴已过临界点，佐证空间均衡门槛结构；③<strong>政治经济信息</strong>——资本化归宿是再分配设计的输入。三条边界：不能回答反事实政策（从未实施的税率）、不能内生化均衡反馈（房价—迁移—税基循环）、不能分解多重均衡的协调问题。<strong>这三条边界线勾出的正是第 4 讲的领土。</strong></p>
+
+<h2>本章小结</h2>
+<ol style="margin-left:22px;">
+<li>三大结构性困难：定点非随机、时点非随机、空间边界模糊（SUTVA 违背）；</li>
+<li>工具箱四件套：DID/事件研究、稳健交错 DID、合成控制、空间 RD，各有明确的适用场景；</li>
+<li>交错 DID 必须处理 TWFE 负权重问题——当代合规底线；</li>
+<li>空间特有威胁的应对：溢出（剔除—估计—重构）与拾取（总量核算 + 创造/搬迁分解）；</li>
+<li>标杆研究示范"识别—机制—外部有效性"三层贡献；</li>
+<li>简约式的三条边界精确划定结构方法的入口。</li>
+</ol>
+
+<h2>关键术语表</h2>
+<table>
+<tr><th>术语</th><th>英文</th><th>一句话定义</th></tr>
+<tr><td>简约式估计</td><td>reduced-form estimation</td><td>不依赖完整结构模型、直接识别因果效应的实证策略</td></tr>
+<tr><td>平行趋势</td><td>parallel trends</td><td>DID 核心假设：无政策时两组趋势相同</td></tr>
+<tr><td>交错处理</td><td>staggered adoption</td><td>不同单位在不同时点接受处理</td></tr>
+<tr><td>负权重问题</td><td>negative weights problem</td><td>TWFE 在异质性效应下含负权重比较导致偏误</td></tr>
+<tr><td>合成控制</td><td>synthetic control</td><td>对照单位加权组合构造反事实</td></tr>
+<tr><td>空间断点回归</td><td>spatial RD</td><td>利用地理边界两侧可比性识别局部效应</td></tr>
+<tr><td>SUTVA</td><td>stable unit treatment value assumption</td><td>处理不影响未处理单位的假设</td></tr>
+<tr><td>拾取/再配置</td><td>relocation / poaching</td><td>效应来自存量活动搬迁而非新增创造</td></tr>
+<tr><td>安慰剂检验</td><td>placebo test</td><td>虚假施加处理以检验设计有效性</td></tr>
+<tr><td>缓冲剔除</td><td>buffer exclusion</td><td>剔除处理区邻近对照以缓解溢出污染</td></tr>
+</table>
+
+<h2>思考与练习</h2>
+<ol class="ex">
+<li>构造三组示例（早处理、晚处理、从不处理），手工演示 Goodman-Bacon 分解中"晚处理作为对照"的负权重情形及其对估计量的影响方向；</li>
+<li>评估 2011 沪渝房产税试点的房价效应：写出合成控制全流程（合成变量集、权重诊断、安慰剂、与限购叠加的处理）；</li>
+<li>空间 RD 评估学区划片：写出"多重断点"威胁的三个诊断步骤与"边界段固定效应"缓解方案；</li>
+<li>某研究发现开发区使区内就业 +25%：设计两步评估判断净创造比例（总量核算 + 结构模型要素清单）；</li>
+<li>【数据练习】取本省分批设立的省级开发区与县级固投数据，用 TWFE 事件研究与 Callaway–Sant'Anna 各估计一次，比较预趋势与稳健性，报告 Bacon 分解图（bacondecomp / csdid）；</li>
+<li>【写作练习】选一篇 place-based 评估论文，按"识别变异—核心假设—溢出处理—外部有效性"四栏写 800 字审稿意见。</li>
+</ol>
+
+<h2>参考文献</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Neumark, D., &amp; Simpson, H. (2015). Place-based policies. <i>Handbook of Regional and Urban Economics</i>, 5B, 1197–1287.</li>
+<li>Kline, P., &amp; Moretti, E. (2014). <i>QJE</i>, 129(1), 275–331.</li>
+<li>Lu, Y., Wang, J., &amp; Zhu, L. (2019). <i>AEJ: Economic Policy</i>.</li>
+<li>Goodman-Bacon, A. (2021). <i>J. Econometrics</i>, 225(2), 254–277.</li>
+<li>Callaway, B., &amp; Sant'Anna, P. H. C. (2021). <i>J. Econometrics</i>, 225(2), 200–230.</li>
+<li>Sun, L., &amp; Abraham, S. (2021). <i>J. Econometrics</i>, 225(2), 175–199.</li>
+<li>de Chaisemartin, C., &amp; D'Haultfœuille, X. (2020). <i>AER</i>, 110(9), 2966–3016.</li>
+<li>Borusyak, K., Jaravel, X., &amp; Spiess, J. (2024). <i>REStud</i>（以刊出为准）.</li>
+<li>Abadie, A. (2021). <i>JEL</i>, 59(2), 391–425.</li>
+<li>Black, S. E. (1999). <i>QJE</i>, 114(2), 577–599.</li>
+<li>Busso, M., Gregory, J., &amp; Kline, P. (2013). <i>JPE</i>, 121(2), 389–432.</li>
+<li>Butts, K. (2021). Difference-in-differences with spatial spillovers.（工作论文）</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>李力行等. 开发区与企业行为系列. 《经济学（季刊）》《经济研究》.</li>
+<li>刘瑞明, 赵仁杰. 西部大开发/新区政策评估. 《经济研究》.</li>
+<li>范子英. 转移支付政策效应系列. 《经济研究》《管理世界》.</li>
+<li>《房产税对基本公共服务的影响研究》. 上海财经大学期刊（第 5 讲引用）.</li>
+</ul>
+<h4>延伸阅读</h4>
+<ul>
+<li>Angrist, J., &amp; Pischke, J.-S. (2010). The credibility revolution. <i>JEP</i>, 24(2), 3–30.</li>
+<li>Arkhangelsky, D., et al. (2021). Synthetic difference-in-differences. <i>AER</i>, 111(12), 4088–4118.</li>
+<li>Neumark, D., &amp; Kolko, J. (2010). <i>JUE</i>, 68(1), 1–19.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 3 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>

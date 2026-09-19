@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 5–6 讲 · 城市内空间财政学</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:900px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:28px;font-weight:700;line-height:1.35;}
+h2.p5{margin-top:40px;font-size:24px;border-top:3px double var(--ink);padding-top:26px;}
+h2{font-size:21px;margin:40px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.formula{text-align:center;font-family:Georgia,"Times New Roman",serif;font-style:italic;margin:14px 0;font-size:16px;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 5–6 讲（模块三 · 城市内空间财政学）</div>
+<h1>公共服务的资本化 &amp; 财税制度与城市空间结构</h1>
+</header>
+
+<!-- ==================== 第 5 讲 ==================== -->
+<h2 class="p5">第 5 讲 城市内空间财政学 1：城市公共服务的资本化（学校、地铁等）</h2>
+<p><strong>主线</strong>：资本化是空间财政学的显微镜——把看不见的公共服务转译成看得见的房价，但读数之前必须先校准镜头（识别）与理解光学原理（均衡）。本讲是第 7 讲城市内 QSE 的简约式地基。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>推导资本化的均衡决定式：供给弹性与迁移摩擦如何共同决定资本化率；</li>
+<li>比较四代识别策略的假设强度与偏差方向；</li>
+<li>掌握 Black (1999) 边界断点设计的细节、贡献与局限；</li>
+<li>综合中国学区房、地铁、房产税试点三大场景的证据；</li>
+<li>运用资本化证据做受益定价与归宿核算；</li>
+<li>评价增值捕获（value capture）作为基建融资工具的论证。</li>
+</ol></div>
+
+<h3>5.1 理论层：资本化由什么决定</h3>
+<p>从 Oates (1969) 的原始回归（税率负、支出正的联合检验）到现代均衡理论：资本化研究 = 识别（剔除混杂）+ 均衡理论（解释系数大小）。核心决定式：</p>
+<div class="formula">（5.1）　Δln P ≈ [需求位移] × 1/(1 + η·需求弹性)</div>
+<p>η→0（供给受约束）：完全资本化——价格通道、incumbent 房主受益；η→∞：资本化趋零——数量通道、边际入住者受益。<strong>结构性结论：资本化率不是"Tiebout 是否存在"的检验，而是住房供给体制的显影</strong>。中国学区溢价陡峭的三重放大器：供给约束 + 分选弹性 + 无持有成本。税收与服务资本化对称：房产税开征的净效应 = −税负现值 + 服务增值现值——取决于税收用途（沪渝试点检验此逻辑）。</p>
+
+<div class="box"><div class="t">概念辨析 BOX 5.1｜资本化的三个易混口径</div>
+①<strong>边际资本化</strong>（政策评估对象）：边际变化的房价反应；②<strong>总资本化水平</strong>（归宿核算对象）：存量差异的全部折现（学区总溢价）；③<strong>资本化率</strong>（结构参数）：每单位财政流量的价格系数。三者答案与用途都不同，读文献先问"是哪一个"。</div>
+
+<h3>5.2 识别层：四代识别策略</h3>
+<table>
+<tr><th>代际</th><th>设计</th><th>关键贡献 / 威胁</th></tr>
+<tr><td>一代 横截面</td><td>房价对税率/支出回归</td><td>奠定事实；遗漏变量与分选内生严重</td></tr>
+<tr><td>二代 边界断点</td><td>Black (1999)：学区边界两侧可比住房</td><td>剥离邻域混杂；构成仍内生、裸分混杂同伴效应、多重断点</td></tr>
+<tr><td>三代 政策冲击 DID</td><td>多校划片、学校新建等自然实验</td><td>时点清晰；预期效应、规避搬迁、溢出威胁</td></tr>
+<tr><td>四代 租金通道</td><td>租金 vs 房价双通道校验</td><td>租金无转售预期污染——"干净读数"</td></tr>
+</table>
+<p>Black (1999) 发现学校质量 1 SD 的边界资本化显著但远小于横截面估计——识别越严效应越小。地铁识别要点：处理强度连续化（到站距离）、三时点分解（公布/开工/开通——相当增值在公布期实现）、环带溢出设计、异质性（连 CBD 线路效应远大）。</p>
+
+<h3>5.3–5.4 证据层：三大中国场景 + 国际校准</h3>
+<table>
+<tr><th>场景</th><th>识别设计</th><th>方向</th><th>量级</th><th>归宿</th></tr>
+<tr><td>学区（中国）</td><td>边界断点、划片改革 DID、租金通道</td><td>房价/租金上升</td><td>显著、随城市能级上升</td><td>存量房主</td></tr>
+<tr><td>地铁（中英文）</td><td>环差 DID、多时点分解</td><td>房价上升</td><td>站点圈 2–10%</td><td>沿线房主</td></tr>
+<tr><td>房产税（沪渝）</td><td>合成控制/DID</td><td>弱抑制</td><td>幅度有限、预期敏感</td><td>试点房主（负）</td></tr>
+<tr><td>学校（美国参照）</td><td>边界断点传统</td><td>房价上升</td><td>1 SD ≈ 2–5%</td><td>存量房主</td></tr>
+</table>
+<p>多校划片 = 对学区溢价的"贴现率冲击"：确定性变抽签 → 溢价收缩；效应异质（优质学区贬值、薄弱升值 = 再分配）；规避行为侵蚀效果（SUTVA 城市内版本）。沪渝试点的启示：低强度 + 高预期敏感的政策，资本化由预期折现率主导——正好验证式 (5.2) 两期结构。</p>
+
+<h3>5.5 政策层：受益定价、归宿核算与增值捕获</h3>
+<p><strong>归宿链条</strong>：服务改善 → 房价上升 → 收益归于政策时点房主；后来者溢价入场 = 预付服务流。"给学校的钱部分变成给房东的钱"——公办投入均等化经资本化部分变成对存量房主的财富转移。</p>
+<table>
+<tr><th>捕获工具</th><th>机制</th><th>中国实践</th><th>评价</th></tr>
+<tr><td>房产税</td><td>存量年度捕获</td><td>沪渝试点（弱）</td><td>最稳但政治阻力大</td></tr>
+<tr><td>土地增值税</td><td>交易时捕获</td><td>存在但征管弱</td><td>交易触发、漏损大</td></tr>
+<tr><td>土地出让金</td><td>一级市场捕获</td><td>主体工具</td><td>一次性预收、激励扭曲</td></tr>
+<tr><td>TIF 税收增量融资</td><td>指定区域增量自偿</td><td>城投近似物</td><td>需可信增量核算</td></tr>
+<tr><td>联合开发（地铁上盖）</td><td>实物捕获</td><td>港铁模式推广</td><td>最直接、依赖开发权配置</td></tr>
+</table>
+<p>资本化自增强循环的两面：良性（受益融资自我实现）与恶性（服务财富门槛化 + 依赖房价上行预期）。政策边界画在"让循环为服务融资"与"不让服务成为财富特权"之间。</p>
+
+<div class="box"><div class="t">中国实践 BOX 5.2｜教师轮岗与多校划片的评估框架</div>
+①政策改变"确定性"→ 溢价应收缩；②效应异质（优质贬、薄弱升 = 再分配，可检验）；③规避侵蚀（搬迁或私立教育 = SUTVA 违背）；④归宿（损失归存量房主 → 政治阻力来源）。把本讲全部工具装配在一个现实政策上——期末论文样板题。</div>
+
+<!-- ==================== 第 6 讲 ==================== -->
+<h2 class="p5">第 6 讲 城市内空间财政学 2：财税制度与城市空间结构（横向蔓延与纵向增长）</h2>
+<p><strong>主线</strong>：城市形态是财政制度的投影——一次性预收的土地出让金造出横向蔓延的城市，年度性的财产税本会造出更紧凑的城。财产税归宿三观点（第 2 讲）在此获得空间形态维度的检验场。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>推导 AMM 中城市边界与建筑高度的联立决定与"蔓延 vs 加密"的边际条件；</li>
+<li>解释 Brueckner 蔓延理论中房产税进入蔓延决策的机制；</li>
+<li>掌握土地财政塑造形态的机制链：一次性预收、增量偏好、双轨出让；</li>
+<li>评价中国证据（门限效应、撤县设区）与国际证据；</li>
+<li>设计存量财政转型的政策组合并预测其形态后果。</li>
+</ol></div>
+
+<h3>6.1 理论层：AMM 中的横向与纵向</h3>
+<p><strong>三重边界联立</strong>：横向边界（城市地价 = 农地价 + 转换成本）、纵向边界（边际楼层租金 = 边际建安成本 + 容积率规制影子价格）、再开发边界（拆除重建期权）。分流命题：需求冲击在"边界外推 vs 密度上升"间的分配，取决于横向供给（指标、地形）与纵向供给（容积率、技术）的相对弹性——<strong>限制蔓延若不同时放松纵向供给，只会推高房价</strong>（Hsieh–Moretti 机制的城市内版本）。</p>
+<p><strong>Brueckner 蔓延理论</strong>：三个驱动力——交通成本定价不足、开放空间价值低估、房产税对住房消费的扭曲。Brueckner–Kim (2003) 展示房产税对净蔓延的方向依模型设定而变——<strong>形态效应的符号是参数问题而非直觉问题，所以需要量化工具</strong>。</p>
+<table>
+<tr><th>财政工具</th><th>捕获时点</th><th>横向激励</th><th>纵向激励</th><th>征管成本</th></tr>
+<tr><td>土地出让金</td><td>一次性（开发时）</td><td>强扩张</td><td>中性偏弱</td><td>低</td></tr>
+<tr><td>房产税（存量）</td><td>年度</td><td>约束</td><td>鼓励</td><td>高</td></tr>
+<tr><td>土地增值税</td><td>交易时</td><td>弱约束</td><td>弱鼓励</td><td>中</td></tr>
+<tr><td>开发影响费</td><td>开发时</td><td>约束</td><td>中性</td><td>中</td></tr>
+<tr><td>容积率管制 / UGB</td><td>行政</td><td>直接约束</td><td>直接控制</td><td>低（影子价格高）</td></tr>
+</table>
+
+<div class="box"><div class="t">概念辨析 BOX 6.1｜"土地财政"的准确含义</div>
+三层常被混用：①狭义——出让金收入；②中义——土地相关全口径收入（出让金+税费+抵押融资）；③激励义——"以土地为杠杆组织增长与财政的体制"。本课程用第③义：关键不是收入规模，而是<strong>边际激励结构</strong>（一次性预收 + 招商竞争 → 增量偏好）。转型讨论针对边际激励而非存量规模。</div>
+
+<h3>6.2 机制层：土地财政的中国机制链</h3>
+<p><strong>出让金 = 一次性预收的资本化变现</strong>（承接第 5 讲式 5.2 对称性）。三个激励后果：收入时间错配（当代花未来的钱）、存量漠视（已售地块无年度回报 → 重增量轻存量）、周期放大（地价顺周期 → 财政顺周期）。</p>
+<p><strong>双轨出让的空间后果三联</strong>：①工业用地真实价格低于社会机会成本 → 开发区巨型化、低密度（蔓延的产业版，连接 Lu–Wang–Zhu）；②商住用地供给策略性配给 → 大城市房价高企、劳动力流入受阻（Hsieh–Moretti 中国移植的实证基础）；③低价工业区与高价居住区割裂 → 职住分离（AMM 梯度的财政扭曲版）。</p>
+<p><strong>门限证据</strong>：土地财政对建成区扩张的效应随人口密度上升而增强（仝德等）——密度高 = 变现能力强 = 增量激励放大。识别警示：密度与扩张可能同受增长预期驱动，门限是机制一致性证据而非严格因果。<strong>撤县设区</strong>：辖区扩大 = 出让权与指标扩大；NSD 系列发现撤并后出让规模与依赖度上升而密度改善有限——"规模上了、密度没上"。反向政策（县改市/省直管县）构成识别冲击（论文题源）。</p>
+
+<h3>6.3 证据层：中英文对照</h3>
+<p><strong>中国证据图谱</strong>：扩张效应显著（FE+门限，因果中等）、撤县设区 DID 较强、指标—人口错配机制清晰但量级有争议、开发区形态效应较强、棚改/旧改纵向再开发中等。<strong>国际对照三大发现</strong>：①影响费 → 边界收缩密度略升；②高财产税州更紧凑（因果弱）；③<strong>Prop 13 挤压效应</strong>——限制财产税 → 加州转向开发收费 + 严格管制保税基："堵住一种捕获，政府发明更扭曲的替代"。对中国的预测：土地财政退坡若不配套新税基，将出现罚没、收费、隐性债务等替代——第 12、13 讲伏笔。<strong>蔓延的财政成本</strong>：基建人均成本、服务规模经济损失、通勤与排放、农地生态损失——在规划人口未兑现（新城空置）时显性化。</p>
+
+<h3>6.4 政策层：从增量财政到存量财政的转型</h3>
+<p>三条压力线：边际递减（可售地收缩）、激励矫正（增量偏好 vs 精细治理不兼容）、均等化要求（土地财政归宿偏向有土城市与先入房主）。转型组合表：</p>
+<table>
+<tr><th>选项</th><th>捕获逻辑</th><th>横向</th><th>纵向</th><th>难点</th></tr>
+<tr><td>房产税扩围</td><td>年度持有</td><td>约束</td><td>鼓励</td><td>评估、政治、沪渝经验放大</td></tr>
+<tr><td>土增税强化</td><td>交易增值</td><td>中性</td><td>中性</td><td>征管博弈、抑制交易</td></tr>
+<tr><td>税制整体设计（税基+税率+用途绑定）</td><td>组合</td><td>约束</td><td>鼓励</td><td>收益观落地</td></tr>
+<tr><td>指标跨区交易</td><td>指标价格化</td><td>约束</td><td>鼓励</td><td>与规划体制兼容</td></tr>
+<tr><td>都市圈土地统筹</td><td>区域捕获</td><td>约束</td><td>鼓励</td><td>第 9 讲治理前提</td></tr>
+</table>
+<p><strong>转型预测</strong>：凡把捕获时点从"开发时"移到"持有/交易时"的改革，都会把城市边际生长从横向拨向纵向，并使存量维护的财政回报首次为正（"老城从包袱变回税源"）。阵痛不在经济逻辑而在征管与政治——Oates 收益观与 Tiebout 竞争的实践考场。</p>
+
+<div class="box"><div class="t">中国实践 BOX 6.2｜城市更新"资金自平衡"：存量财政的微观预演</div>
+更新单元"拆建比、资金自平衡"= 在存量子集上复制一次性变现逻辑（卖增容面积覆盖拆迁成本）。评价：①仍是"卖面积"而非"养税基"；②增容指标有全市影子价格——单单元平衡 ≠ 全市最优密度（此单元增容摊薄彼单元价值）；③正确核算需要第 7 讲的城市内 QSE——下一讲最现实的应用题。</div>
+
+<h2>两讲小结</h2>
+<ol style="margin-left:22px;">
+<li>资本化率由供给弹性与迁移摩擦决定——是供给体制的显影而非 Tiebout 检验；识别四代演进，识别越严效应越小；归宿普遍归于存量房主；增值捕获工具谱系决定融资—受益匹配与政府激励；</li>
+<li>AMM 三重边界联立决定形态；土地财政机制链（一次性预收 → 增量偏好 → 双轨出让 → 蔓延 + 配给 + 割裂）；挤压效应警示单点改革的替代扭曲；存量转型的形态预测是"横向转纵向、存量变税源"；</li>
+<li>两讲合起来给出城市内空间财政学的完整闭环：<strong>资本化（价格信号）→ 形态（数量反应）→ 均衡核算（第 7 讲 QSE）</strong>。</li>
+</ol>
+
+<h2>关键术语表（合并）</h2>
+<table>
+<tr><th>术语</th><th>英文</th><th>一句话定义</th></tr>
+<tr><td>资本化率</td><td>capitalization rate</td><td>每单位财政流量变化折算的房价系数</td></tr>
+<tr><td>边界断点</td><td>boundary discontinuity</td><td>利用边界两侧可比性识别效应</td></tr>
+<tr><td>多校划片</td><td>multi-school zoning</td><td>一小区对应多校抽签入学的均衡化政策</td></tr>
+<tr><td>增值捕获</td><td>value capture</td><td>回收公共投资引起的土地增值为公共收入</td></tr>
+<tr><td>税收增量融资</td><td>tax increment financing</td><td>以指定区域税收增量自偿的融资</td></tr>
+<tr><td>城市蔓延</td><td>urban sprawl</td><td>超过社会最优的低密度扩张</td></tr>
+<tr><td>容积率</td><td>floor-to-area ratio</td><td>建筑面积/用地面积，纵向供给管制核心</td></tr>
+<tr><td>双轨出让</td><td>dual-track leasing</td><td>工业低价 + 商住高价的并存结构</td></tr>
+<tr><td>撤县设区</td><td>county-to-district conversion</td><td>市兼并周边县的区划调整</td></tr>
+<tr><td>挤压效应</td><td>squeeze effect</td><td>限制一种财政工具引发更扭曲的替代</td></tr>
+<tr><td>存量财政</td><td>stock-based finance</td><td>以持有/交易捕获为主的财政形态</td></tr>
+</table>
+
+<h2>思考与练习（合并选做六题）</h2>
+<ol class="ex">
+<li>推导式 (5.1) 资本化率对供给弹性的比较静态；讨论"限购+限售"如何同时移动供需弹性；</li>
+<li>Black 断点的"构成内生"检验设计（边界内新迁入家庭特征比较）；</li>
+<li>多校划片后优质学区 −8%、薄弱 +5%：完整归宿核算与效率—公平评价；</li>
+<li>推导 AMM 中"通勤成本降 20%"在横向/纵向间的分流；若纵向弹性为零，房价承担全部调整；</li>
+<li>用"挤压效应"预测房产税改革受阻时的替代捕获工具并排序其形态后果；</li>
+<li>【数据练习】本市多校划片试点的事件研究 DID（含租金通道）；或 2005–2023 地级市土地财政—扩张门限回归 + 增长预期遗漏变量的稳健性。</li>
+</ol>
+
+<h2>参考文献（两讲合并）</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Oates, W. E. (1969). <i>JPE</i>, 77(6), 957–971.</li>
+<li>Black, S. E. (1999). <i>QJE</i>, 114(2), 577–599.</li>
+<li>Bayer, P., Ferreira, F., &amp; McMillan, R. (2007). <i>JPE</i>, 115(4), 588–638.</li>
+<li>Cellini, S., Ferreira, F., &amp; Rothstein, J. (2010). <i>QJE</i>, 125(1), 215–260.</li>
+<li>Brueckner, J. K. (2000). Urban sprawl. <i>IRSR</i>, 23(2), 160–171.</li>
+<li>Brueckner, J. K., &amp; Kim, H.-A. (2003). <i>ITPF</i>, 10(1), 5–23.</li>
+<li>Song, Y., &amp; Zenou, Y. (2006). <i>JUE</i>（税收—形态理论）.</li>
+<li>Fischel, W. A. (2001). <i>The Homevoter Hypothesis</i>. Harvard UP.</li>
+<li>Glaeser, E., &amp; Gyourko, J. (2018). <i>JEP</i>, 32(1), 3–30.</li>
+<li>Wen, H., et al. (2018); Wang, X. J., et al. (2017). 地铁资本化系列.</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>温海珍, 杨尚, 秦忠福. (2013). 城市教育配套对住宅价格的影响. 《中国土地科学》, 27(1).</li>
+<li>仝德等. 土地财政对城市扩张的影响：来自中国城市的证据.</li>
+<li>《行政区扩张、土地出让依赖与城市发展质量》. 北大 NSD 系列.</li>
+<li>刘守英. 土地制度与中国发展系列. 《经济研究》《管理世界》.</li>
+<li>郑思齐. 土地供给与城市空间结构系列.</li>
+<li>《地理科学进展》(2021) 公共服务资本化综述；上海财经大学学报房产税试点研究.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 5–6 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 10 讲 · 地区间空间财政学 3：包含财税机制的地区间量化空间均衡分析</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:900px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:28px;font-weight:700;line-height:1.35;}
+.sub{margin-top:10px;color:var(--muted);font-size:14.5px;}
+h2{font-size:21px;margin:44px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.formula{text-align:center;font-family:Georgia,"Times New Roman",serif;font-style:italic;margin:14px 0;font-size:16px;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 10 讲（共 14 讲）</div>
+<h1>地区间空间财政学 3：包含财税机制的地区间量化空间均衡分析</h1>
+<div class="sub">区域间 QSE · 中国校准管道 · 州税错配与中国开发区结构精读 · 四个政策反事实 · Nash-in-QSE 前沿</div>
+</header>
+
+<h2>本章导读</h2>
+<p>本讲是地区间模块的结构收官，也是全书方法论的第二次全流程实战（第一次在第 7 讲城市内）。任务：把财政工具（地方税、转移支付、开发区优惠、税收分配规则）完整嵌入<strong>区域间量化空间均衡</strong>，输出"从未实施过的区域政策"的反事实与福利归宿。五层展开：模型层（多区域 Armington/NEG 骨架 + 含户籍摩擦的迁移 + 两级政府预算）、校准层（中国参数管道）、精读层（Fajgelbaum 州税错配 + 中国开发区结构评估）、应用层（四个中国政策反事实的机制推演）、前沿层（政府内生化 Nash-in-QSE 与动态化衔接）。本讲结束后，学生应能独立搭建一个"迷你区域间 QSE"（期末论文的结构部分）。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>写出含多级政府与多种税收的区域间 QSE 完整均衡体系，指出每个财政工具的"进入位置"；</li>
+<li>掌握中国校准特殊问题：贸易流度量替代、户籍摩擦参数化、转移支付公式与开发区政策束写入；</li>
+<li>深读两篇标杆：复述错配度量构造与开发区福利分解；</li>
+<li>推演四个中国政策反事实的机制链（方向、传导、归宿）；</li>
+<li>理解政府内生化（Nash-in-QSE）的技术路线与计算挑战；</li>
+<li>组装期末论文的迷你区域间 QSE。</li>
+</ol></div>
+
+<h2>10.1 模型层：区域间 QSE 的完整设定</h2>
+<h3>10.1.1 环境：三类主体 + 两级政府</h3>
+<div class="formula">（10.1）　迁移流份额 ∝ exp[θ·(ln V<sub>s</sub> − ln V<sub>r</sub>) − ξ<sub>rs</sub>]　（θ 迁移弹性；ξ 户籍摩擦矩阵）</div>
+<div class="formula">（10.2）　G<sub>j</sub> = Σ<sub>k</sub> share<sub>k</sub>·T<sub>k</sub>(在 j 地入库) + 转移支付<sub>j</sub> − 债务利息　（各税种按制度规则入库）</div>
+<p>家庭（迁移含户籍摩擦）、企业（TFP + 集聚 α + 贸易成本 → 工资，第 2 讲式 2.2 的量化版）、政府两级（地方政策工具向量 z_j = 让利、开发区政策束、g_j）。均衡要求商品、劳动力、住房、政府预算四市场同时出清且迁移一致性成立。</p>
+
+<h3>10.1.2 财政工具的"进入位置"总表（本讲核心教学工具）</h3>
+<table>
+<tr><th>财政工具</th><th>进入位置</th><th>直接效应</th><th>均衡反馈</th></tr>
+<tr><td>实际税负让利</td><td>企业利润方程</td><td>区位吸引力 ↑</td><td>邻区税基流出（拾取）、全域零和、集聚再配置</td></tr>
+<tr><td>开发区政策束</td><td>企业成本 + TFP + 供地</td><td>区内进入 ↑</td><td>拾取 vs 创造分解、房价工资梯度</td></tr>
+<tr><td>增值税分配规则</td><td>(10.2) 入库规则参数</td><td>收入分布重构</td><td>招商激励改变 → 竞争强度 → 空间再平衡</td></tr>
+<tr><td>均等化转移支付</td><td>(10.2) 转移项 + g</td><td>落后区服务 ↑</td><td>人口滞留/回流（对抗集聚）、努力边际变化</td></tr>
+<tr><td>专项转移（基建）</td><td>TFP / τ</td><td>可达性 ↑</td><td>贸易效应 + 集聚门槛（可能方向反转！）</td></tr>
+<tr><td>户籍/可携带性</td><td>迁移摩擦 ξ</td><td>迁移响应 ↑</td><td>大城市人口再配置、边际福利（HM 通道）</td></tr>
+</table>
+<p><strong>每个政策争论（"该不该清理优惠""转移支付养懒人吗"）都对应表中的一行，答案取决于均衡反馈列的量化大小——这正是区域间 QSE 的存在理由。</strong></p>
+
+<h3>10.1.3 hat 代数五步流程</h3>
+<p>①观测均衡 → ②估计/校准参数 → ③政策以变化率进入 → ④解非线性方程组 → ⑤福利核算与分解。第 2 讲警告完全适用：<strong>集聚机制下反事实可能靠近对称破裂点，须做均衡路径敏感性报告</strong>。</p>
+
+<div class="box"><div class="t">方法角 BOX 10.1｜"局部证据喂全局模型"：两段式校准的黄金组合</div>
+政府与政策参数无法从均衡数据直接反演——把第 3 讲简约式证据当"外部锚"：开发区 DID 的生产率效应 → 政策束 TFP 参数；地铁资本化 → 可达性参数；房产税试点合成控制 → 税收传导系数。规范表述：每个结构参数旁标注来源（内部估计/外部锚/校准），报告"锚失准 ±25% 时反事实结论的稳定性"——审稿人判断结构论文可信度的第一入口，期末论文硬要求。</div>
+
+<h2>10.2 校准层：中国参数管道</h2>
+<table>
+<tr><th>参数</th><th>数据/方法</th><th>中国特殊问题</th></tr>
+<tr><td>贸易流与 σ</td><td>省际 MRIO / 货运 OD / 引力插补</td><td>无直接统计；插补误差须做"数据债"声明</td></tr>
+<tr><td>迁移弹性 θ + 户籍摩擦 ξ</td><td>普查五年迁移矩阵；落户放宽分批冲击</td><td>ξ 是中国 QSE 最有学术增量的参数（国际模型无需）</td></tr>
+<tr><td>集聚 α / 拥挤 η</td><td>沿用第 7 讲（α 0.02–0.08；η 一线更小）</td><td>η 可由第 5 讲资本化证据反推</td></tr>
+<tr><td>政府模块</td><td>制度事实写入：分享比例、入库原则、均衡性转移公式（公开可查）、优惠幅度与土地让利微观测度</td><td>开发区政策束参数化 = 让利 + 折让 + TFP 锚</td></tr>
+</table>
+
+<h2>10.3 精读层：两篇结构标杆的机制细节</h2>
+<h3>10.3.1 Fajgelbaum et al.：州税错配的三个技术细节</h3>
+<p>①<strong>错配度量构造</strong>：不是"税率差异大 = 错配大"，而是"观测均衡与 Ramsey 型最优税制均衡的距离"——依赖弹性与集聚参数（参数审计教科书案例）；②<strong>三重归宿</strong>：本地劳动者（工资）、本地资本房主（房价）、跨州再配置（人口）——中国迁移率低于美国（户籍摩擦），归宿更偏"本地价格通道"而非"人口通道"，移植研究必须先算这笔账；③<strong>政策排名稳健性</strong>："公司税错配最大"依赖企业区位弹性——移植到中国开发区语境需重估。</p>
+
+<h3>10.3.2 中国开发区的结构评估：拾取的总量答案</h3>
+<p>Chen, Lu, Timmins &amp; Zhu 路线：政策束写入多区域 QSE，DID 证据校准参数，反事实三情景（取消全部/仅留沿海/均匀扩散）。方向性结论（数值以原文为准）：①区内收益真实但相当部分来自<strong>再配置</strong>（第 3 讲的怀疑被结构化证实并定量）；②政策向内陆扩散的总量回报低于沿海集中布局，但区域均衡目标下可被社会福利函数接受——<strong>效率与空间公平的权衡第一次可以被一条曲线刻画</strong>；③政策强度边际：过最优规模后继续增设的边际总量效应趋零甚至为负（第 8 讲囚徒困境的结构定量）。</p>
+
+<h3>10.3.3 合流方向（论文富矿）</h3>
+<p>在 Chen 类框架中加入 Fajgelbaum 式"最优政策规则"求解——不是评估既有开发区，而是问"给定集聚与户籍摩擦，最优的开发区布局与强度是什么"。</p>
+
+<h2>10.4 应用层：四个中国政策反事实的机制推演</h2>
+<table>
+<tr><th>反事实</th><th>冲击</th><th>机制链</th><th>敏感参数</th></tr>
+<tr><td>①清理税收优惠</td><td>让利归零（利润 hat）</td><td>高让力区相对恶化、集聚区拾取红利回流；总量方向不定（囚徒困境 vs 对冲集聚）；需与转移支付联动</td><td>α（回流强度）、ξ（人口跟不跟企业走）</td></tr>
+<tr><td>②增值税改消费地原则</td><td>入库规则改写</td><td>制造省收入↓、人口消费市↑；招商回报从"抢工业"转向"抢人口消费"→ 政策束重构（第 6 讲商住配给逻辑被削弱）</td><td>地方目标函数权重</td></tr>
+<tr><td>③均等化转移加码</td><td>转移项 ↑</td><td>人口滞留（对抗集聚）；若迁移摩擦本已阻止有效迁移，滞留是次优补偿而非扭曲——"摩擦成本 vs 拥挤成本"谁大</td><td>ξ 与拥挤弹性</td></tr>
+<tr><td>④高铁网络扩张</td><td>τ_rs ↓</td><td>对称破裂实时演示：都市圈连接线多落入整合区间（双赢），干线易落入虹吸区间（门槛效应）；站点资本化 vs 通道效应对照</td><td>初始 τ 位置（第 2 讲钉状图）</td></tr>
+</table>
+
+<div class="box"><div class="t">概念辨析 BOX 10.2｜"效率—公平权衡曲线"的正确打开方式</div>
+①曲线不是政策菜单——线上每点对应不同政策组合，移动需要真实工具；②社会福利函数（落后地区权重）决定选点，但<strong>曲线形状本身是无参数事实</strong>——先吵形状，再吵权重；③"存在更优组合"（前沿内移）的证明比"选哪点"更有政策共识——结构研究的最大公约数在改善前沿，不在选点。</div>
+
+<h2>10.5 前沿层：政府内生化与动态化</h2>
+<p><strong>Nash-in-QSE</strong>：地方政府在均衡中选 z_j，纳什均衡 = QSE 求解器外再套一层不动点迭代。挑战：均衡多重性与迭代不收敛（缓解：策略网格化 + 多起点 + 收敛敏感）。<strong>研究空白</strong>：中国"考核约束下的策略互动"（锦标赛规则进入目标函数）尚无完整结构刻画——把第 2 讲周黎安机制定量化的处女地。<strong>动态衔接</strong>：静态反事实答"新均衡在哪"，动态模型（DRH）答"路径与速度"——第 12 讲正式展开；本讲静态框架 + 第 12 讲动态模块 = 区域财政结构分析的完整技术栈。</p>
+
+<h2>本章小结</h2>
+<ol style="margin-left:22px;">
+<li>区域间 QSE = Armington/NEG + 含户籍摩擦的迁移 + 企业区位 + 两级政府预算；"进入位置"总表是政策争论到模型变量的翻译器；</li>
+<li>中国校准管道：MRIO、迁移矩阵 + 户籍摩擦（最有增量的参数）、政府模块按制度事实写入；"局部证据喂全局模型"的两段式校准是可信度生命线；</li>
+<li>Fajgelbaum 三细节（均衡—计划者距离、三重归宿、参数敏感）+ Chen 类拾取总量答案与权衡曲线；合流方向 = 最优政策规则求解；</li>
+<li>四个反事实推演示范"不求解也能讲清方向、传导、归宿"；权衡曲线三原则是政策阅读的过滤器；</li>
+<li>前沿：Nash-in-QSE（锦标赛定量化是空白）；动态化衔接第 12 讲；期末论文组装件齐备。</li>
+</ol>
+
+<h2>关键术语表</h2>
+<table>
+<tr><th>术语</th><th>英文</th><th>一句话定义</th></tr>
+<tr><td>区域间量化空间均衡</td><td>regional QSE</td><td>多区域贸易-迁移-政府联立的可计算均衡</td></tr>
+<tr><td>多区域投入产出表</td><td>MRIO</td><td>记录区域间商品流矩阵的核算数据</td></tr>
+<tr><td>户籍摩擦</td><td>hukou friction</td><td>户籍制度造成的迁移额外成本（ξ）</td></tr>
+<tr><td>政策束</td><td>policy bundle</td><td>税收+土地+基建组合的政策包</td></tr>
+<tr><td>错配度量</td><td>misallocation metric</td><td>观测均衡与计划者解的距离</td></tr>
+<tr><td>拾取比例</td><td>relocation share</td><td>表观效应中来自存量再配置的份额</td></tr>
+<tr><td>Nash-in-QSE</td><td>Nash-in-QSE</td><td>政府策略互动嵌入均衡的两层不动点求解</td></tr>
+<tr><td>虹吸区间</td><td>siphoning range</td><td>中间贸易成本下可达性提升致单向集中</td></tr>
+<tr><td>权衡曲线</td><td>efficiency–equity frontier</td><td>总量效率与空间均衡度的组合前沿</td></tr>
+<tr><td>通道效应</td><td>corridor pass-through</td><td>干线过境不停车地区相对恶化</td></tr>
+</table>
+
+<h2>思考与练习</h2>
+<ol class="ex">
+<li>对照 10.1.2 总表：补全"房产税试点扩围"与"宅基地退出补偿"两行（直接效应 + 均衡反馈）；</li>
+<li>户籍摩擦 ξ 的识别设计：利用 2014 年后落户门槛分批放宽，写出估计方程与识别假设；</li>
+<li>推演（不求解）：清理优惠反事实中 α 翻倍、ξ 减半，"回流沿海"强度如何变化？写出每步传导方向；</li>
+<li>参数审计：给 Chen 类评估列"外部锚"表——每个结构参数对应的 DID 证据是什么？哪个锚最弱、如何补救？</li>
+<li>用 Box 10.2 三原则重述一篇区域政策争论文章：双方各在曲线的哪个读法上出错？</li>
+<li>【期末论文组装题】迷你区域间 QSE 设计稿四件套：精简模型说明、参数来源表（含外部锚）、可解反事实的 hat 冲击定义、参数审计计划——各一页。</li>
+</ol>
+
+<h2>参考文献</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Fajgelbaum, P., Morales, E., Serrato, J. C. S., &amp; Zidar, O. State taxes and spatial misallocation.（WP 21708 及后续）</li>
+<li>Chen, B., Lu, M., Timmins, C., &amp; Zhu, Y. Spatial misallocation: Evaluating place-based policies in China.</li>
+<li>Desmet, K., Nagy, D. K., &amp; Rossi-Hansberg, E. (2018). <i>JPE</i>, 126(3), 903–983.</li>
+<li>Redding, S. J., &amp; Rossi-Hansberg, E. (2017). <i>ARE</i>, 9, 21–58.</li>
+<li>Allen, T., &amp; Arkolakis, C. (2014). <i>QJE</i>, 129(3), 1085–1140.</li>
+<li>Hsieh, C.-T., &amp; Moretti, E. (2019). <i>AEJ: Macro</i>, 11(2), 1–39.</li>
+<li>Tombe, T., &amp; Zhu, X. (2019). Trade, migration, and productivity: A quantitative analysis of China. <i>AEJ: Macro</i>, 11(3), 184–213.（中国校准重要参照）</li>
+<li>Fan, J. 等 place-based land policy 结构系列.</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>陆铭. 空间政治经济学系列. 《经济研究》.</li>
+<li>省际 MRIO 编制研究（中科院地理所/清华团队）.</li>
+<li>户籍改革评估系列（落户放宽分批 DID）.</li>
+<li>均衡性转移支付资金管理办法（财政部文件——政府模块校准一手材料）.</li>
+</ul>
+<h4>延伸阅读</h4>
+<ul>
+<li>Caliendo, L., &amp; Parro, F. (2015). <i>AER</i>（多部门 hat 反事实技术范本）.</li>
+<li>第 3 讲 Lu, Wang &amp; Zhu (2019)——本讲结构版对应的简约式证据.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 10 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>

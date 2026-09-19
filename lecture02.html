@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 2 讲 · 理论基础：NEG、财政联邦主义与空间均衡的融合</title>
+<style>
+:root{--ink:#1c2129;--muted:#6b7280;--accent:#8c1d13;--line:#d9dce1;--bg:#faf9f7;--panel:#f3f0ea;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Songti SC","Noto Serif SC",serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:16.5px;}
+.wrap{max-width:880px;margin:0 auto;padding:52px 30px 90px;}
+header{border-bottom:3px double var(--ink);padding-bottom:22px;margin-bottom:34px;}
+.kicker{font-family:"PingFang SC",sans-serif;font-size:12.5px;letter-spacing:.28em;color:var(--accent);margin-bottom:10px;}
+h1{font-size:29px;font-weight:700;line-height:1.35;}
+.sub{margin-top:10px;color:var(--muted);font-size:14.5px;}
+h2{font-size:21px;margin:44px 0 14px;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+h3{font-size:17px;margin:26px 0 8px;color:#2a3140;}
+p{margin-bottom:12px;text-align:justify;}
+.obj{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:14px 0;}
+.obj li{margin-left:20px;margin-bottom:4px;}
+.box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 20px;margin:18px 0;font-size:14.5px;}
+.box .t{font-family:"PingFang SC",sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:6px;}
+.def{background:#fff;border:1px solid var(--accent);padding:14px 18px;margin:16px 0;font-size:15px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;margin:14px 0;}
+th{font-family:"PingFang SC",sans-serif;font-size:12.5px;background:var(--panel);border:1px solid var(--line);padding:8px 10px;text-align:left;letter-spacing:.04em;}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.formula{text-align:center;font-family:Georgia,"Times New Roman",serif;font-style:italic;margin:14px 0;font-size:16px;}
+.refs{font-size:13.5px;}
+.refs h4{font-family:"PingFang SC",sans-serif;font-size:13px;color:var(--accent);margin:12px 0 4px;letter-spacing:.1em;}
+.refs li{margin-left:20px;margin-bottom:3px;}
+.ex{font-size:14.5px;}
+.ex li{margin-left:20px;margin-bottom:6px;}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted);}
+strong{color:#111;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">SPATIAL PUBLIC FINANCE · 第 2 讲（共 14 讲）</div>
+<h1>理论基础：NEG、财政联邦主义与空间均衡的融合</h1>
+<div class="sub">核心—边缘模型 · Tiebout–Oates–ZM 定理 · 策略性地方政府的空间均衡 · 中国式联邦主义辩论</div>
+</header>
+
+<h2>本章导读</h2>
+<p>本讲完成理论基础的三个任务：<strong>其一</strong>，正式展开 Krugman（1991）核心—边缘模型——推导其三个核心方程，理解"循环累积因果"何时占优、何时被拥挤力遏制；<strong>其二</strong>，系统化财政联邦主义的规范基准——Tiebout 效率条件、Oates 分权定理、财产税归宿三观点之争、Zodrow–Mieszkowski 逐底竞争模型；<strong>其三</strong>，展示融合的前沿形态——当地方政府作为策略参与者进入空间均衡时，经典结论如何被改写。本讲以中国式联邦主义辩论收尾，将理论落到中国的制度土壤。</p>
+
+<div class="obj"><strong>学习目标</strong>
+<ol>
+<li>掌握核心—边缘模型的三方程与"钉状图"均衡结构的经济学含义；</li>
+<li>推导并解释 Oates 分权定理的权衡结构与 Tiebout 均衡的效率/失败条件；</li>
+<li>比较财产税归宿三种观点及其对"房产税开征"的不同预测；</li>
+<li>运用 ZM 模型解释逐底竞争机制与矫正思路；</li>
+<li>评价"财政分权促进增长"的中国证据及其识别困难；</li>
+<li>构建把地方政府行为写入空间均衡的简化融合框架，为第 4 讲量化版本做准备。</li>
+</ol></div>
+
+<h2>2.1 核心部分：Krugman（1991）核心—边缘模型</h2>
+
+<h3>2.1.1 模型环境</h3>
+<p>两区域、两部门：制造业 M（Dixit–Stiglitz 垄断竞争，替代弹性 σ，冰山贸易成本 τ）与农业 A（完全竞争、无贸易成本、计价物）。农业劳动不可流动且均匀分布；制造业劳动可跨区流动，按实际工资差迁移。上层偏好 Cobb–Douglas：制造业支出份额 μ。关键参数组合：</p>
+<div class="formula">（2.1）　ρ = μ(σ−1)/σ（"关联度"参数：制造业份额高、产品差异化高 → 集聚力强）</div>
+
+<h3>2.1.2 三个核心方程</h3>
+<p><strong>（a）工资方程</strong>——由垄断竞争定价与零利润条件，区域 r 的工资由"支出加权的市场可达性"决定：</p>
+<div class="formula">（2.2）　w<sub>r</sub> = [ Σ<sub>s</sub> (Y<sub>s</sub> / P<sub>s</sub><sup>σ−1</sup>) · G<sub>rs</sub><sup>−σ</sup> ]<sup>1/σ</sup> · 常数</div>
+<p>靠近大市场可付更高工资（本地销售省贸易成本）——市场规模效应的正式表达。</p>
+<p><strong>（b）价格指数方程</strong>：</p>
+<div class="formula">（2.3）　P<sub>r</sub> = [ Σ<sub>s</sub> (n<sub>s</sub> p<sub>s</sub> G<sub>sr</sub>)<sup>1−σ</sup> ]<sup>1/(1−σ)</sup></div>
+<p>企业越集中的区域物价指数越低——价格指数效应。</p>
+<p><strong>（c）迁移方程</strong>：制造业劳动向实际工资 ω<sub>r</sub> = w<sub>r</sub>/P<sub>r</sub><sup>μ</sup> 高的区域流动。（2.2）（2.3）相互作用产生核心机制：<strong>工人迁移 = 支出迁移 = 市场规模变化 = 工资变化 = 进一步迁移</strong>——循环累积因果。制动力是农业不可流动劳动与（量化版本补上的）住房拥挤成本。</p>
+
+<h3>2.1.3 均衡结构：对称破裂与"钉状图"</h3>
+<p>对称均衡（λ = 1/2）在贸易成本高或极低时稳定；在中间区间失稳，经济跳向核心—边缘结构。政策含义：<strong>同一政策在不同参数区间可能产生方向相反的空间后果</strong>——基础设施改善（τ 下降）在分散力仍强时保护边缘区产业份额；越过临界点后反而触发向核心的骤然集中。这是第 10、11 讲区域政策评估的结构直觉。</p>
+
+<div class="box"><div class="t">方法角 BOX 2.1｜从"钉状图"到 exact hat algebra：NEG 的两次定量化</div>
+第一次是"可估计的 NEG"：用引力方程把（2.2）的市场可达性变成可回归对象，ρ、σ 可由贸易数据估计。第二次是 Dekle–Eaton–Kortum（2008）式"帽子代数"：只求解政策冲击后的相对变化（ŵ, P̂），把反事实从"校准模拟"变为"半参数估计"（第 4 讲展开）。核心—边缘模型的三个方程是全部量化空间模型的祖先。</div>
+
+<h3>2.1.4 NEG 的财政空白与补白</h3>
+<p>标准 NEG 没有政府，但立即引出财政问题：谁向核心区的集聚租金征税？集聚租金意味着核心区政府可以在不引发产业外逃的情况下征收正的税收（"core 可以征税而不失位"）；边缘区则面临"减税也拉不回产业"的困境。税收竞争呈现<strong>中心—边缘非对称</strong>：竞争压力集中于"边缘对边缘"。这是理解中国"开发区竞争为何长期存在于同类城市之间"的钥匙（第 8 讲）。</p>
+
+<h2>2.2 联邦主义核心部分</h2>
+
+<h3>2.2.1 Tiebout（1956）：效率条件与失败条件</h3>
+<p>强假设：完全流动、辖区类型连续、信息完全、居住与就业无关、辖区规模最优、无外溢。均衡实现按偏好分类（sorting）、辖区内部偏好同质、公共品供给满足 Samuelson 条件。<strong>失败条件同样重要</strong>：迁移成本 → sorting 不完全；技能差异 + 财政动机 → 辖区"择优而栖"（zoning，Hamilton 1976）；外溢与规模经济打破最优规模。<strong>实证难题</strong>：资本化、辖区分化等含义并非 Tiebout 独有预测（竞争性开发商模型亦然）；Rhode–Strumpf（2003）用美国百年数据未发现 sorting 随迁移成本下降而强化的证据——Tiebout 是有用的基准而非现实描述。</p>
+
+<h3>2.2.2 Oates（1972）分权定理：规范基准</h3>
+<p>若公共品供给无成本差异、无外溢，则只要辖区间偏好存在差异，分散供给弱优于集中供给。结构表达：损失函数为偏好偏离的凸函数时，地方按本地偏好 θ<sub>i</sub> 供给的期望损失恒小于中央按 θ̄ 统一供给——分权收益随偏好异质性 Var(θ) 上升、随外溢与规模经济代价上升而下降。<strong>"异质性—外溢权衡"是所有政府间财政设计的骨架</strong>：都市圈跨界服务（第 9 讲）是"外溢 > 辖界"的直接应用；中国纵向失衡（第 8 讲）可读作定理的扭曲版本。</p>
+
+<h3>2.2.3 财产税归宿：三种观点</h3>
+<table>
+<tr><th>观点</th><th>归宿</th><th>机制</th><th>中国对应物</th></tr>
+<tr><td>传统观点</td><td>住房消费者（累退）</td><td>财产税作为对住房消费的货物税转嫁</td><td>"房产税推高租金"论</td></tr>
+<tr><td>新观点（Mieszkowski 1972; ZM 1986）</td><td>全国资本所有者（累进）+ 地域错配</td><td>全国视角下是对全域资本的差别化征税；税率差异引发资本跨区错配</td><td>城市间税率自主的错配风险</td></tr>
+<tr><td>收益观点（Oates 1969; Hamilton 1976）</td><td>中性（使用者付费）</td><td>Tiebout 竞争 + zoning 使税负完全内部化</td><td>"健全地方税体系"论（税—服务对应）</td></tr>
+</table>
+<p>分歧本质是对 Tiebout 竞争完善程度的判断。第 6、7 讲把这一争论放进中国城市内结构估计。</p>
+
+<h3>2.2.4 Zodrow–Mieszkowski（1986）：逐底竞争基准模型</h3>
+<p>环境：N 个同质辖区，资本全国固定供给，辖区对本地资本征税提供公共品，纳什互动。机制：单辖区提税 → 本地资本净收益率降 → 资本外流 → 本地工资下降；辖区决策忽略对他区的正外部性 → <strong>纳什均衡税率低于社会最优、公共品供给不足</strong>。三个扩展：①集聚修正（核心区可征集聚租金税，竞争非对称，第 8 讲）；②标尺竞争（竞争经由选举问责传导，Besley–Case 1995）；③中国形态（税收返还 + 土地补贴 + 基建配套的捆绑竞争，第 8 讲）。</p>
+
+<div class="box"><div class="t">概念辨析 BOX 2.2｜"逐底竞争"效率判断的三个易混口径</div>
+① 对流动资本征税的竞争无效率（ZM 原型）；② 受益税（对不可流动居民按受益征税）下竞争中性；③ 若地方政府行为本身扭曲（过度投资、重复建设），竞争可能约束政府。判断"竞争好坏"必须先问：竞争的工具是什么、税基流动性如何。三口径在第 8 讲评估中国税收竞争时都会用到。</div>
+
+<h2>2.3 融合：策略性地方政府的空间均衡</h2>
+
+<h3>2.3.1 三个不可回避的反馈环</h3>
+<table>
+<tr><th>环</th><th>传导链</th><th>忽略它的后果</th></tr>
+<tr><td>A 资本化环</td><td>税率/服务 → 迁移与房价 → 税基与土地价值 → 预算 → 税率/服务</td><td>高估一次性减税的持续流入；误读房价上涨</td></tr>
+<tr><td>B 集聚环</td><td>政策 → 市场可达性 → 企业区位 → 就业工资 → 人口支出 → 可达性</td><td>把边际效应外推到临界点之外（门槛效应）</td></tr>
+<tr><td>C 竞争环</td><td>本辖区政策 → 他辖区税基/反应 → 本辖区均衡</td><td>单辖区"最优"在均衡中自我抵消</td></tr>
+</table>
+<p>最小融合框架（为第 4 讲准备）：</p>
+<div class="formula">（2.5）　max<sub>t<sub>i</sub>, g<sub>i</sub></sub> W<sub>i</sub> = V(t<sub>i</sub>, g<sub>i</sub>; w<sub>i</sub>, P<sub>i</sub>)　s.t.　t<sub>i</sub>·B<sub>i</sub>(w, P) + 转移支付 = g<sub>i</sub>·N<sub>i</sub> + 基建成本</div>
+<p>其中 (w<sub>i</sub>, P<sub>i</sub>) 由空间均衡内生决定，B<sub>i</sub>(·) 是资本化后的税基函数——把"地方政府是均衡参与者"形式化。</p>
+
+<h3>2.3.2 融合改写的三个经典结论</h3>
+<p><strong>结论一：分权效率与集聚效率可能冲突。</strong>递增收益下"按本地偏好分散供给"可能锁定低集聚均衡；都市圈治理（第 9 讲）本质是重划"异质性—外溢—集聚"边界。</p>
+<p><strong>结论二：资本化的福利含义取决于住房供给与迁移摩擦。</strong>无摩擦时是中性信号；有摩擦时把服务差异转嫁为财富再分配（先入者获益、后来者付高价）——学区房溢价的分配后果（第 5 讲）由此而来。</p>
+<p><strong>结论三：税收竞争的均衡结构由空间结构决定。</strong>对称辖区 → 对称低税均衡；核心—边缘 → 核心可征税、边缘"减税无效"。比"逐底"更精确的语言（第 8 讲）。</p>
+
+<div class="box"><div class="t">方法角 BOX 2.3｜结构模型中的"政府"：从幽灵到演员</div>
+第一代量化空间模型中政府是幽灵——只出现在反事实里。前沿工作让政府成为演员：Fajgelbaum 等让州政府设定州税、居民企业跨州流动，估计税收空间错配；城市内版本让地方政府选择土地供给或分区强度。让政府内生化是空间财政学方法论的核心议程，也是期末论文最有潜力做出增量的问题域（第 14 讲）。</div>
+
+<h2>2.4 中国语境：市场维护型联邦主义及其批评</h2>
+
+<h3>2.4.1 假说：Federalism, Chinese Style</h3>
+<p>Jin–Qian–Weingast（2005）：1980 年代财政承包制形成"市场维护型联邦主义"——①包干契约使地方对边际财政收入有强索取权；②辖区间竞争约束政府攫取；③中央维持分权规则。证据：省级边际留成率与省属企业效率、非国有化进程正相关。MPF 把 Tiebout/ZM 逻辑移植到"地方政府对企业的竞争"。</p>
+
+<h3>2.4.2 批评与修正</h3>
+<p><strong>Zhang 等（2006）</strong>：中国是"财政分权 + 政治集中"，分权效果依赖中央考核任命而非"可信承诺"；激励是"对上负责"与"增长锦标赛"混合。<strong>周黎安（2007）晋升锦标赛</strong>：晋升基于相对增长考核——解释增长动力，也解释重复建设、地方保护与"重基建、轻民生"（基建进入考核，民生不进入）。<strong>分税制转折（1994）</strong>：收入集中化削弱剩余索取权，地方转向"土地财政 + 预算外融资"重建边际激励——理论焦点从"承包激励"转向"土地财政激励"（第 6 讲）。</p>
+
+<div class="box"><div class="t">中国实践 BOX 2.4｜用三环框架读"开发区竞争"</div>
+环 A：开发区"三免两减半 + 低价土地"改变企业落户的资本化计算——土地低价是政府让渡的负资本化；环 B：企业落户改变市场可达性，触发上下游集聚（Lu–Wang–Zhu 2019 的创造效应与拾取效应并存，第 3 讲精读）；环 C：邻近城市竞相设区，边际租金被竞争耗散。三环合起来预测：开发区数量的竞争均衡超过社会最优（重复建设），但对每家入驻企业补贴可能仍不足以覆盖其集聚外部性——两种低效并存，第 10 讲结构评估要拆开的账。</div>
+
+<h3>2.4.3 从理论到识别：因果难题与出路</h3>
+<p>"财政分权 → 增长/服务"的回归受困于分权内生性。可信出路：①分税制、省直管县等制度断裂做 DID（第 3 讲工具）；②承包契约谈判细节构造边际留成率外生变异；③把"分权效应"分解为收入端激励、支出端责任、考核权重三个可分别识别的参数。这是课程论文的方法接口。</p>
+
+<h2>本章小结</h2>
+<ol style="margin-left:22px;">
+<li>核心—边缘模型三方程刻画循环累积因果；对称破裂与门槛效应是空间政策评估必须内生的均衡现象；</li>
+<li>Tiebout 效率条件与失败条件同样极端；资本化与 sorting 是可检验含义但非独有预测；</li>
+<li>Oates"异质性—外溢—规模经济"权衡是政府间财政设计骨架；财产税三观点分歧在于对 Tiebout 竞争完善程度的判断；ZM 给出逐底竞争基准；</li>
+<li>融合框架下地方财政嵌入资本化环、集聚环、竞争环；分权效率与集聚效率可能冲突、资本化福利取决于摩擦、税收竞争结构由空间结构决定；</li>
+<li>中国式联邦主义辩论说明财政激励必须与政治激励联合识别；分税制后激励载体从财政承包转向土地财政。</li>
+</ol>
+
+<h2>关键术语表</h2>
+<table>
+<tr><th>术语</th><th>英文</th><th>一句话定义</th></tr>
+<tr><td>冰山贸易成本</td><td>iceberg trade cost</td><td>运输按比例损耗的成本设定（τ 单位出发 1 单位到达）</td></tr>
+<tr><td>价格指数效应</td><td>price index effect</td><td>企业集聚降低本地物价指数、提高实际工资的机制</td></tr>
+<tr><td>循环累积因果</td><td>circular causation</td><td>迁移→支出→市场规模→工资→迁移的正反馈</td></tr>
+<tr><td>对称破裂</td><td>symmetry breaking</td><td>对称均衡越过临界值后失稳、跳向非对称结构</td></tr>
+<tr><td>集聚租金</td><td>agglomeration rent</td><td>核心区位的溢价，构成"不失位"的征税空间</td></tr>
+<tr><td>财产税新观点</td><td>new view</td><td>财产税为对全域资本的差别化征税，兼具再分配与地方错配</td></tr>
+<tr><td>收益观点</td><td>benefit view</td><td>财产税是公共服务价格，Tiebout 竞争下中性</td></tr>
+<tr><td>标尺竞争</td><td>yardstick competition</td><td>选民以邻区绩效为标尺评价本区政府形成的间接竞争</td></tr>
+<tr><td>市场维护型联邦主义</td><td>market-preserving federalism</td><td>分权+辖区竞争+可信承诺约束政府攫取的制度结构</td></tr>
+<tr><td>财政承包制</td><td>fiscal contracting</td><td>1980–93 年"上缴包干、剩余自留"的央地收入安排</td></tr>
+<tr><td>择优而栖/分区</td><td>fiscal discrimination / zoning</td><td>辖区以分区门槛筛选税基优良的居民</td></tr>
+</table>
+
+<h2>思考与练习</h2>
+<ol class="ex">
+<li>用（2.2）（2.3）的直觉解释：为何交通改善（τ 下降）在边缘区产业份额较高时可能保护边缘区、越过临界点后反而加速边缘化？对中西部高铁投资评估意味着什么？</li>
+<li>推导：若公共品外溢比例为 θ，Oates 分权收益条件如何改写？用它讨论"跨市地铁应由谁出资"；</li>
+<li>财产税三观点对"开征房产税推高还是压低房价"各有何预测？写出假设链并标注哪条在中国情境下最可能失效；</li>
+<li>现实地方税率长期稳定且差异巨大，与 ZM 预测不符。给出三种理论解释（集聚租金/标尺竞争/投票而非税基流动），各配一个可检验含义；</li>
+<li>【辩论题】正方"财政承包制是增长引擎" vs 反方"分税制才是市场统一功臣"，各准备论点与证据三条；</li>
+<li>【建模练习】在（2.5）式中设定线性城市两辖区、住房供给弹性不同，写出房价对税率差的反应函数草图，说明供给弹性如何调节资本化环强度。</li>
+</ol>
+
+<h2>参考文献</h2>
+<div class="refs">
+<h4>英文核心</h4>
+<ul>
+<li>Krugman, P. (1991). Increasing returns and economic geography. <i>JPE</i>, 99(3), 483–499.</li>
+<li>Fujita, M., Krugman, P., & Venables, A. J. (1999). <i>The Spatial Economy</i>. MIT Press.</li>
+<li>Baldwin, R., et al. (2003). <i>Economic Geography and Public Policy</i>. Princeton UP.</li>
+<li>Tiebout, C. M. (1956). <i>JPE</i>, 64(5), 416–424.</li>
+<li>Oates, W. E. (1972). <i>Fiscal Federalism</i>.</li>
+<li>Mieszkowski, P. (1972). The property tax: An excise tax or a profits tax? <i>JPubE</i>, 1(1), 73–96.</li>
+<li>Zodrow, G. R., & Mieszkowski, P. (1986). <i>JPE</i>（卷期待核）.</li>
+<li>Hamilton, B. W. (1976). <i>AER</i>, 66(5), 743–753.</li>
+<li>Besley, T., & Case, A. (1995). <i>AER</i>, 85(1), 25–45.</li>
+<li>Rhode, P. W., & Strumpf, K. S. (2003). <i>JPE</i>, 111(5), 848–874.</li>
+<li>Jin, H., Qian, Y., & Weingast, B. R. (2005). <i>JDE</i>, 76(1), 79–103.</li>
+<li>Keen, M., & Konrad, K. A. (2013). <i>Handbook of Public Economics</i>, Vol. 5.</li>
+<li>Dekle, R., Eaton, J., & Kortum, S. (2008). <i>IMF Staff Papers</i>, 55(3), 511–540.</li>
+</ul>
+<h4>中文核心</h4>
+<ul>
+<li>周黎安. (2007). 中国地方官员的晋升锦标赛模式研究. 《经济研究》.</li>
+<li>张军等. 中国财政分权与增长系列. 《经济研究》《管理世界》.</li>
+<li>范子英. 财政分权、转移支付系列. 《经济研究》.</li>
+<li>郭庆旺, 吕冰洋. 政府间财政关系系列. 《中国社会科学》《经济研究》.</li>
+</ul>
+<h4>延伸阅读</h4>
+<ul>
+<li>Oates, W. E. (1999). An essay on fiscal federalism. <i>JEL</i>, 37(3), 1120–1149.</li>
+<li>Redding, S. J., & Rossi-Hansberg, E. (2017). <i>ARE</i>, 9, 21–58.（第 4 讲预读）</li>
+<li>Henderson, J. V. (1985). The Tiebout model: Bring back the economics of mobility. <i>AER P&P</i>, 75(2), 324–329.</li>
+</ul>
+</div>
+
+<footer>《空间财政学前沿讲座》第 2 讲 · 教材级讲义 · 基于课程大纲文献检索 · 卷期页码以原刊为准</footer>
+</div>
+</body>
+</html>
